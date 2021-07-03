@@ -1,0 +1,5 @@
+A probabilidade de o email cair na caixa de spam é maior usando mail() em relação ao PHPMailer, e quando o número de email aumenta muito o ideal é passar do PHPMailer para um serviço de entrega de email tipo MailGun, Postmark, AWS SES e por aí.
+
+ tudo depende do DNS, mesmo com mail(), se o dkim, dmarc e spf estiverm configurados corretamente o email não vai pro spam
+
+

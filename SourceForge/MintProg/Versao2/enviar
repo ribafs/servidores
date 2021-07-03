@@ -1,0 +1,16 @@
+Envio da ISO
+
+rsync -az /backup/Linux/Distros/linuxmint-20-cinnamon64-prog2.iso ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release2/
+
+Não mostra nada na tela até que termine. Para ver o progresso usar -v e ou -vP
+
+ou
+scp /backup/Linux/Distros/linuxmint-20-cinnamon64-prog2.iso ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release2/
+
+-z - comprime os arquivos durante o trajeto. Melhor para arquivos texto, php, etc, não compactados. Não é bom para zip, iso, etc.
+-r - recursive
+-v - verbose
+-n - checar argumentos anes de executar
+-P - progess e partial, envio incremental, somente se houver alterações, continuar envios interrompidos
+-a - (archive) sincronizar recursivamente e preservando os links simbólicos, arquivos especiais e de dispositivo, horários de modificação, grupo, proprietário e permissões. É mais comumente usado do que -r e geralmente é o que você deseja usar.
+

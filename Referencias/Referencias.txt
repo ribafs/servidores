@@ -1,0 +1,42 @@
+https://www.cursoemvideo.com/
+
+Hospedagem free com suporte a php, mysql e domínio:
+
+- http://000webhost.com/ - 1GB de espaço e 2 bancos mysql. Hospeda domínios e subdomínios
+Para algumas horas todo dia - Envio de arquivos grandes
+
+- https://www.freehostia.com/ - 250MB e 1 banco mysql - Script de instalação para Joomla e outros
+Somente envio de arquivos de até 500kb
+
+- https://hospedagemgratis.net/
+Tráfego de dados: 10 GB mensal
+Espaço em disco: 1 GB SSD boosted
+Bancos de Dados: 10
+
+- https://www.awardspace.com/
+
+- http://sk4host.com
+Main Hosting Details
+Control panel username - 	sk4_23073297
+Control panel password 	**********
+Control panel URL - cpanel.sk4host.com
+MySQL username - 	sk4_23073297
+MySQL password 	**********
+MySQL hostname - 	sql308.sk4host.com
+FTP username - 	sk4_23073297
+FTP password - 	**********
+FTP host name 	ftp.sk4host.com
+	
+Your Website URL's
+Home page - 	http://ribafs.sk4host.com
+
+- Relações de serviços
+Hospedagem
+https://pt.hostadvice.com/hosting-services/filters--price-0-0/
+
+
+Domínio grátis
+http://www.dot.tk/en/index.html?lang=en
+
+https://www.apptuts.com.br/tutorial/windows-pc/aplicativos-gratis-gravar-tela-do-pc/
+

@@ -1,0 +1,41 @@
+Criar em cima do 1.8 com kernel anterior
+
+Nome
+mint-20-cin64-prog-1.8.iso
+
+Copiar tudo do docs para o /var/www/html do chroot
+Copiar o perms para permscr e executar em todo o /var/www/html do chroot
+Executar
+permscr
+
+Enviar para o chroot:
+
+apt update;
+apt upgrade -y;
+apt autoremove -y
+
+- Next até o final
+
+MySQL
+- Configurado para uso sem sudo e sem senha
+
+Enviar a ISO para o SF
+Via rsync
+rsync -avz /backup/transp/0ProjetosAtuais/MintProg/Versao1.8/docs/* ribafsweb.sourceforge.net:/home/project-web/mint-prog/htdocs/docs/
+
+ou SCP
+scp -r /backup/transp/0ProjetosAtuais/MintProg/Versao1.8/docs/* ribafsweb.sourceforge.net:/home/project-web/mint-prog/htdocs/docs/
+
+Agradecimento: ao colega Kenio Farias do grupo PHP Brasil no Facebook pelas sugestões. :)
+
+Após testar o live e instalado
+
+Enviar o README, o MD5 e a ISO para o SF.
+
+Copiar para a pasta Realease1.8 do SF
+
+Importante o uso do rsync para envio da ISO, pois tem demorado em torno de 9 horas apra enviar. Como hoje desliguei acidentalmente o computador em meio ao envio, então o rsync continua o envio, basta repetir o comando.
+
+rsync -avz /backup/Linux/Distros/mint-20-cin64-prog-1.8.md5 ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release1.8/
+rsync -avz /backup/Linux/Distros/mint-20-cin64-prog-1.8.iso ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release1.8/
+

@@ -1,0 +1,11 @@
+alias maiores='du -cks * | sort -rn | head'
+alias cw='cd /var/www/html'
+alias af='php artisan migrate:fresh'
+alias am='php artisan migrate'
+alias as='php artisan serve'
+alias ams='composer du;php artisan migrate --seed'
+alias asd='composer du;php artisan db:seed'
+alias at='php artisan tinker'
+alias auth7='composer require laravel/ui --dev;php artisan ui bootstrap --auth;npm install && npm run dev;npm audit fix'
+alias clearall='php artisan view:clear;php artisan cache:clear;php artisan route:clear;php artisan optimize;composer dumpautoload'
+

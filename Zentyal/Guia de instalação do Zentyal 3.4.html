@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html hasbrowserhandlers="true"><head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <meta name="viewport" content="width=device-width; user-scalable=0">
+
+  <link rel="stylesheet" href="Guia de instalação do Zentyal 3.4_arquivos/aboutReader.css" type="text/css">
+
+  <script type="text/javascript;version=1.8" src="Guia de instalação do Zentyal 3.4_arquivos/aboutReader.js"></script>
+<link rel="stylesheet" href="Guia de instalação do Zentyal 3.4_arquivos/narrate.css"><title>Guia de instalação do Zentyal 3.4 |</title><link rel="shortcut icon" href="https://www.mundotibrasil.com.br/wp-content/uploads/2015/03/MTIB-quadrado-perfeito.png"></head>
+
+<body class="light sans-serif loaded">
+  <div id="container" class="container font-size5 content-width3">
+    <div id="reader-header" class="header" style="display: block;">
+      <style scoped="">
+        @import url("chrome://global/skin/aboutReaderControls.css");
+      </style>
+      <a id="reader-domain" class="domain" href="https://www.mundotibrasil.com.br/instalacao-do-zentyal-3-4/">mundotibrasil.com.br</a>
+      <div class="domain-border"></div>
+      <h1 id="reader-title">Guia de instalação do Zentyal 3.4 |</h1>
+      <div id="reader-credits" class="credits">por 
+								Ricardo Pinheiro</div>
+    </div>
+
+    <div class="content">
+      <style scoped="">
+        @import url("chrome://global/skin/aboutReaderContent.css");
+      </style>
+      <div id="moz-reader-content" class="line-height4" style="display: block;"><div id="readability-page-1" class="page" xml:base="https://www.mundotibrasil.com.br/instalacao-do-zentyal-3-4/"><div class="entry-content"><p><a title="Zentyal" href="http://www.zentyal.org/" target="_blank"><img class="aligncenter size-full wp-image-1900" src="Guia de instalação do Zentyal 3.4_arquivos/logo-zentyal.png" alt="logo-zentyal" width="208" height="60"></a> Publiquei no portal <a title="Meus Posts" href="http://www.cooperati.com.br/author/rpinheiro/" target="_blank">CooperaTI</a>&nbsp;o
+ guia de instalação do Zentyal que estava na versão 2.2 e muitas versões
+ depois e após o lançamento do samba 4 decidi refazer alguns daqueles 
+posts adaptando para essa nova versão, gostaria de avisar que ainda 
+estou testando essa nova versão. O Zentyal (antigo Ebox) permite 
+gerenciar recursos e funções de um servidor a partir do navegador, o 
+foco atual da equipe do Zentyal tem sido a substituição total do AD e 
+Exchange da microsoft para pequenas e médias empresas com transparência e
+ sem complicações, eu ainda não fiz nenhuma migração desse tipo ainda.</p><p>[03/jul/2014]
+ Com o lançamento da versão 3.5 lançado em 1 julho, testei o passo a 
+passo deste post para verificar se o mesmo ainda é válido e o resultado é
+ positivo, este post também pode ser utilizado para a versão 3.5 sem 
+nenhuma alteração.</p><p>Com o recente lançamento do Ubuntu 14.04 LTS (<span>Trusty
+ Tahr) inclui abaixo a tabela de lançamentos da equipe que desenvolve o 
+Zentyal Comunity Edition, geralmente temos 3 meses entre as novas 
+atualizações e no momento da escrita desse post o Zentyal 3.4 estava 
+homologado apenas para a versão 13.10<span><strong> <a title="Ubuntu Server 13.10" href="http://www.ubuntu.com/download/server/thank-you?country=BR&amp;version=13.10&amp;architecture=amd64">clique aqui</a></strong></span> para realizar o download dessa versão. Mais detalhes do cronograma de lançamento de novas versões veja a tabela abaixo:</span></p><table>
+<thead>
+<tr>
+<th>ZENTYAL RELEASE</th>
+<th>UBUNTU RELEASE</th>
+<th>DATE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.2</td>
+<td>Ubuntu 12.04.03 LTS</td>
+<td>September 2013</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td>Ubuntu 12.04.03 LTS</td>
+<td>December 2013</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>Ubuntu 13.10</td>
+<td>March 2014</td>
+</tr>
+<tr>
+<td>3.5</td>
+<td>Ubuntu 14.04 LTS</td>
+<td>July 2014</td>
+</tr>
+<tr>
+<td>4.0</td>
+<td>Ubuntu 14.04.1 LTS</td>
+<td>September 2014</td>
+</tr>
+<tr>
+<td>4.1</td>
+<td>Ubuntu 14.04.1 LTS</td>
+<td>December 2014</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td>Ubuntu 14.10</td>
+<td>March 2015</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td>Ubuntu 15.04</td>
+<td>June 2015</td>
+</tr>
+<tr>
+<td>4.4</td>
+<td>Ubuntu 15.04</td>
+<td>September 2015</td>
+</tr>
+<tr>
+<td>4.5</td>
+<td>Ubuntu 15.04</td>
+<td>December 2015</td>
+</tr>
+<tr>
+<td>4.6</td>
+<td>Ubuntu 15.10</td>
+<td>March 2016</td>
+</tr>
+<tr>
+<td>4.7</td>
+<td>Ubuntu 16.04 LTS</td>
+<td>June 2016</td>
+</tr>
+<tr>
+<td>5.0</td>
+<td>Ubuntu 16.04.1 LTS</td>
+<td>September 2016</td>
+</tr>
+</tbody>
+</table><p>Espero que já tenham o ubuntu instalado para inicio da 
+instalação do Zentyal, a minha preferência é a instalação manual do 
+Zentyal ao invés de baixar sua ISO (<a title="Download Zentyal" href="http://www.zentyal.org/server/" target="_blank">Link para Download</a>) com tudo incluso.</p><p>Vamos preparar nosso ubuntu para receber os pacotes do Zentyal. Acrescente o repositório do Zentyal para o APT.</p><pre>$ sudo vi /etc/apt/sources.list.d/zentyal.list
+ deb http://archive.zentyal.org/zentyal 3.4 main extra</pre><p>Vamos importar a chave GPG do novo repositório:</p><pre>$&nbsp;sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E23F4777</pre><p>Vamos atualizar e instalar o zentyal</p><pre>$ sudo apt-get update</pre><pre>$ sudo apt-get install zentyal</pre><p>Não se assuste com a quantidade de pacotes a serem instalados (212 pacotes), se somados não chegam a 55MB (53,8).</p><p>Crie uma senha para o administrador do MySQL</p><p><a href="https://www.mundotibrasil.com.br/wp-content/uploads/2014/04/zentyal-01.png" class="fbx-link fbx-instance"><img class="aligncenter size-full wp-image-1910" src="Guia de instalação do Zentyal 3.4_arquivos/zentyal-01.png" alt="zentyal-01" width="576" height="161"></a></p><p>Redigite a senha para confirmar</p><p><a href="https://www.mundotibrasil.com.br/wp-content/uploads/2014/04/zentyal-02.png" class="fbx-link fbx-instance"><img class="aligncenter size-full wp-image-1911" src="Guia de instalação do Zentyal 3.4_arquivos/zentyal-02.png" alt="zentyal-02" width="352" height="111"></a></p><p>Porta de acesso ao Zentyal (443/https)</p><p><a href="https://www.mundotibrasil.com.br/wp-content/uploads/2014/04/zentyal-03.png" class="fbx-link fbx-instance"><img class="aligncenter size-full wp-image-1912" src="Guia de instalação do Zentyal 3.4_arquivos/zentyal-03.png" alt="zentyal-03" width="574" height="135"></a></p><p>O
+ Zentyal foi criado de forma modular e oferece atualmente mais de 30 
+módulos, podemos escolher os seguintes perfis de instalação:</p><ul>
+<li><strong>zentyal-office</strong>: zentyal-samba, zentyal-printers, zentyal-antivirus, zentyal-ebackup, zentyal-remoteservices</li>
+<li><strong>zentyal-communication</strong>: zentyal-mail, zentyal-jabber, zentyal-mailfilter, zentyal-antivirus, zentyal-ebackup, zentyal-remoteservices</li>
+<li><strong>zentyal-gateway</strong>: zentyal-squid, zentyal-trafficshaping, zentyal-l7-protocols, zentyal-ebackup, zentyal-remoteservices</li>
+<li><strong>zentyal-infrastructure</strong>: zentyal-dhcp, zentyal-dns, 
+zentyal-openvpn, zentyal-webserver, zentyal-ftp, zentyal-ntp, 
+zentyal-ebackup, zentyal-remoteservices</li>
+</ul><p>&nbsp;Caso queira o Zentyal com a interface em nosso idioma instale também o pacote “<strong>language-pack-zentyal-pt-br</strong>“.</p><p>Se
+ todos os precedimentos foram seguidos podemos ir para nosso navegador 
+preferido e iniciar a segunda etapa da configuração, para isso digite no
+ seu navegador:</p><pre>https://IP_DO_ZENTYAL/</pre><p>Se desejar utilizar a interface gráfica para administração do Zentyal instale o seguinte pacote:</p><pre>$ sudo apt-get install zenbuntu-desktop</pre><p>Claro que você não irá fazer isso!! :-)</p><p>Faça o login utilizando o usuário e senha que você criou na instalação do Ubuntu.</p><p><a href="https://www.mundotibrasil.com.br/wp-content/uploads/2014/04/zentyal-04.png" class="fbx-link fbx-instance"><img class="aligncenter size-full wp-image-1915" src="Guia de instalação do Zentyal 3.4_arquivos/zentyal-04.png" alt="zentyal-04" width="428" height="392"></a></p><p>Na próxima tela temos que escolher qual o perfil para a instalação.</p><p><a href="https://www.mundotibrasil.com.br/wp-content/uploads/2014/04/zentyal-05.png" class="fbx-link fbx-instance"><img class="aligncenter size-full wp-image-1916" src="Guia de instalação do Zentyal 3.4_arquivos/zentyal-05.png" alt="zentyal-05" moz-reader-center="true" width="1039" height="816"></a></p><p>Marquei o perfil Gateway e diversos módulos associados a esse perfil foram marcados, clique em <em><strong>Instalar</strong></em> para dar prosseguimento a instalação do Zentyal.</p><p>Na tela seguinte será apresentado todos os módulos selecionados na tela anterior, clique em <em><strong>OK</strong></em> para continuar a instalação.</p><p><a href="https://www.mundotibrasil.com.br/wp-content/uploads/2014/04/zentyal-07.png" class="fbx-link fbx-instance"><img class="aligncenter size-full wp-image-1917" src="Guia de instalação do Zentyal 3.4_arquivos/zentyal-07.png" alt="zentyal-07" moz-reader-center="true" width="1058" height="554"></a></p><p>Na próxima tela selecione qual a sua interface de acesso externo (Internet) e a Interna (Rede Local), clique em <em><strong>Próximo</strong></em>.</p><p><a href="https://www.mundotibrasil.com.br/wp-content/uploads/2014/04/zentyal-08.png" class="fbx-link fbx-instance"><img class="aligncenter size-full wp-image-1918" src="Guia de instalação do Zentyal 3.4_arquivos/zentyal-08.png" alt="zentyal-08" moz-reader-center="true" width="1062" height="537"></a></p><p>Na próxima tela vamos configurar o IP de cada interface. Claro, altere para o seu cenário, clique em <em><strong>Próximo</strong></em>.</p><p><a href="https://www.mundotibrasil.com.br/wp-content/uploads/2014/04/zentyal-09.png" class="fbx-link fbx-instance"><img class="aligncenter size-full wp-image-1919" src="Guia de instalação do Zentyal 3.4_arquivos/zentyal-09.png" alt="zentyal-09" moz-reader-center="true" width="843" height="850"></a></p><p>Selecione de onde virão os usuários, e o nome do Domínio Local, clique em <em><strong>Próximo</strong></em>.</p><p><a href="https://www.mundotibrasil.com.br/wp-content/uploads/2014/04/zentyal-10.png" class="fbx-link fbx-instance"><img class="aligncenter size-full wp-image-1920" src="Guia de instalação do Zentyal 3.4_arquivos/zentyal-10.png" alt="zentyal-10" moz-reader-center="true" width="1064" height="588"></a></p><p>E para finalizar vamos registrar nosso servidor na cloud do Zentyal.</p><p><a href="https://www.mundotibrasil.com.br/wp-content/uploads/2014/04/zentyal-11.png" class="fbx-link fbx-instance"><img class="aligncenter size-full wp-image-1921" src="Guia de instalação do Zentyal 3.4_arquivos/zentyal-11.png" alt="zentyal-11" moz-reader-center="true" width="1036" height="519"></a></p><p>Apartir
+ desse ponto para ter acesso ao Dashboard do Zentyal vamos precisar de 
+uma máquina conectada na rede local para ter acesso, feito isso teremos a
+ seguinte tela:</p><p><a href="https://www.mundotibrasil.com.br/wp-content/uploads/2014/04/zentyal-12.png" class="fbx-link fbx-instance"><img class="aligncenter size-full wp-image-1927" src="Guia de instalação do Zentyal 3.4_arquivos/zentyal-12.png" alt="zentyal-12" moz-reader-center="true" width="1238" height="789"></a></p><p>Por hora é isso, em breve trarei mais posts sobre o Zentyal. Comentem e não deixem de assinar nossa newsletter.</p></div></div></div>
+    </div>
+
+    <div>
+      <style scoped="">
+        @import url("chrome://global/skin/aboutReaderControls.css");
+      </style>
+      <div id="reader-message" style="display: none;"></div>
+    </div>
+  </div>
+
+  <ul id="reader-toolbar" class="toolbar">
+    <style scoped="">
+      @import url("chrome://global/skin/aboutReaderControls.css");
+    </style>
+    <li><button id="close-button" class="button close-button" title="Fechar leitor"></button></li>
+    <ul id="style-dropdown" class="dropdown">
+      <li><button class="dropdown-toggle button style-button" title="Controle de fontes"></button></li>
+      <li id="reader-popup" class="dropdown-popup">
+        <div id="font-type-buttons"><button class="sans-serif-button selected"><div class="name">Aa</div><div class="description">Sem serifa</div></button><button class="serif-button"><div class="name">Aa</div><div class="description">Com serifa</div></button></div>
+        <hr>
+        <div id="font-size-buttons">
+          <button id="font-size-minus" class="minus-button">
+          </button><button id="font-size-sample">Aa</button><button id="font-size-plus" class="plus-button">
+        </button></div>
+        <hr>
+        <div id="content-width-buttons">
+          <button id="content-width-minus" class="content-width-minus-button">
+          </button><button id="content-width-plus" class="content-width-plus-button">
+        </button></div>
+        <hr>
+        <div id="line-height-buttons">
+          <button id="line-height-minus" class="line-height-minus-button">
+          </button><button id="line-height-plus" class="line-height-plus-button">
+        </button></div>
+        <hr>
+        <div id="color-scheme-buttons"><button class="light-button selected"><div class="name">Claro</div></button><button class="dark-button"><div class="name">Escuro</div></button><button class="sepia-button"><div class="name">Sépia</div></button></div>
+        <div class="dropdown-arrow">
+      </div></li>
+    </ul>
+  <ul class="dropdown" id="narrate-dropdown"><style scoped="">
+      @import url("chrome://global/skin/narrateControls.css");
+    </style>
+    <li>
+       <button class="dropdown-toggle button" id="narrate-toggle" title="Narrar">
+         <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+          <style>
+            @keyframes grow {
+              0%   { transform: scaleY(1);   }
+              15%  { transform: scaleY(1.5); }
+              15%  { transform: scaleY(1.5); }
+              30%  { transform: scaleY(1);   }
+              100% { transform: scaleY(1);   }
+            }
+
+            #waveform &gt; rect {
+              fill: #808080;
+            }
+
+            .speaking #waveform &gt; rect {
+              fill: #58bf43;
+              transform-box: fill-box;
+              transform-origin: 50% 50%;
+              animation-name: grow;
+              animation-duration: 1750ms;
+              animation-iteration-count: infinite;
+              animation-timing-function: linear;
+            }
+
+            #waveform &gt; rect:nth-child(2) { animation-delay: 250ms; }
+            #waveform &gt; rect:nth-child(3) { animation-delay: 500ms; }
+            #waveform &gt; rect:nth-child(4) { animation-delay: 750ms; }
+            #waveform &gt; rect:nth-child(5) { animation-delay: 1000ms; }
+            #waveform &gt; rect:nth-child(6) { animation-delay: 1250ms; }
+            #waveform &gt; rect:nth-child(7) { animation-delay: 1500ms; }
+
+          </style>
+          <g id="waveform">
+            <rect x="1" y="8" width="2" height="8" rx=".5" ry=".5"></rect>
+            <rect x="4" y="5" width="2" height="14" rx=".5" ry=".5"></rect>
+            <rect x="7" y="8" width="2" height="8" rx=".5" ry=".5"></rect>
+            <rect x="10" y="4" width="2" height="16" rx=".5" ry=".5"></rect>
+            <rect x="13" y="2" width="2" height="20" rx=".5" ry=".5"></rect>
+            <rect x="16" y="4" width="2" height="16" rx=".5" ry=".5"></rect>
+            <rect x="19" y="7" width="2" height="10" rx=".5" ry=".5"></rect>
+          </g>
+         </svg>
+        </button>
+    </li>
+    <li class="dropdown-popup">
+      <div id="narrate-control" class="narrate-row">
+        <button disabled="disabled" id="narrate-skip-previous" title="Voltar"></button>
+        <button id="narrate-start-stop" title="Iniciar"></button>
+        <button disabled="disabled" id="narrate-skip-next" title="Avançar"></button>
+      </div>
+      <div id="narrate-rate" class="narrate-row">
+        <input id="narrate-rate-input" value="0" title="Velocidade" step="25" max="100" min="-100" type="range">
+      </div>
+      <div id="narrate-voices" class="narrate-row"><div class="voiceselect" id="voice-select"><button class="select-toggle" aria-controls="voice-options">
+      <span class="label">Voz:</span> <span class="current-voice">Padrão</span>
+    </button>
+    <div class="options" id="voice-options" role="listbox"><button data-value="automatic" class="option selected" tabindex="-1" role="option" aria-selected="true">Padrão</button><button data-value="urn:moz-tts:speechd:afrikaans?af" class="option" tabindex="-1" role="option">Africâner (af)</button><button data-value="urn:moz-tts:speechd:albanian?sq" class="option" tabindex="-1" role="option">Albanês (sq)</button><button data-value="urn:moz-tts:speechd:german?de" class="option" tabindex="-1" role="option">Alemão (de)</button><button data-value="urn:moz-tts:speechd:aragonese?an" class="option" tabindex="-1" role="option">Aragonês (an)</button><button data-value="urn:moz-tts:speechd:armenian-west?hy-WEST" class="option" tabindex="-1" role="option">Armênio (hy-WEST)</button><button data-value="urn:moz-tts:speechd:armenian?hy" class="option" tabindex="-1" role="option">Armênio (hy)</button><button data-value="urn:moz-tts:speechd:bosnian?bs" class="option" tabindex="-1" role="option">Bósnio (bs)</button><button data-value="urn:moz-tts:speechd:bulgarian?bg" class="option" tabindex="-1" role="option">Búlgaro (bg)</button><button data-value="urn:moz-tts:speechd:kannada?kn" class="option" tabindex="-1" role="option">Canarês (kn)</button><button data-value="urn:moz-tts:speechd:catalan?ca" class="option" tabindex="-1" role="option">Catalão (ca)</button><button data-value="urn:moz-tts:speechd:cantonese?zh-YUE" class="option" tabindex="-1" role="option">Chinês (zh-YUE)</button><button data-value="urn:moz-tts:speechd:Mandarin?zh" class="option" tabindex="-1" role="option">Chinês (zh)</button><button data-value="urn:moz-tts:speechd:croatian?hr" class="option" tabindex="-1" role="option">Croata (hr)</button><button data-value="urn:moz-tts:speechd:kurdish?ku" class="option" tabindex="-1" role="option">Curdo (ku)</button><button data-value="urn:moz-tts:speechd:danish?da" class="option" tabindex="-1" role="option">Dinamarquês (da)</button><button data-value="urn:moz-tts:speechd:slovak?sk" class="option" tabindex="-1" role="option">Eslovaco (sk)</button><button data-value="urn:moz-tts:speechd:spanish-latin-am?es-LA" class="option" tabindex="-1" role="option">Espanhol (es-LA)</button><button data-value="urn:moz-tts:speechd:spanish?es" class="option" tabindex="-1" role="option">Espanhol (es)</button><button data-value="urn:moz-tts:speechd:esperanto?eo" class="option" tabindex="-1" role="option">Esperanto (eo)</button><button data-value="urn:moz-tts:speechd:estonian?et" class="option" tabindex="-1" role="option">Estoniano (et)</button><button data-value="urn:moz-tts:speechd:finnish?fi" class="option" tabindex="-1" role="option">Finlandês (fi)</button><button data-value="urn:moz-tts:speechd:french-Belgium?fr-BE" class="option" tabindex="-1" role="option">Francês (fr-BE)</button><button data-value="urn:moz-tts:speechd:french?fr-FR" class="option" tabindex="-1" role="option">Francês (fr-FR)</button><button data-value="urn:moz-tts:speechd:welsh?cy" class="option" tabindex="-1" role="option">Galês (cy)</button><button data-value="urn:moz-tts:speechd:georgian?ka" class="option" tabindex="-1" role="option">Georgiano (ka)</button><button data-value="urn:moz-tts:speechd:greek-ancient?grc" class="option" tabindex="-1" role="option">greek-ancient (grc)</button><button data-value="urn:moz-tts:speechd:greek?el" class="option" tabindex="-1" role="option">Grego (el)</button><button data-value="urn:moz-tts:speechd:hindi?hi" class="option" tabindex="-1" role="option">Hindi (hi)</button><button data-value="urn:moz-tts:speechd:dutch?nl" class="option" tabindex="-1" role="option">Holandês (nl)</button><button data-value="urn:moz-tts:speechd:hungarian?hu" class="option" tabindex="-1" role="option">Húngaro (hu)</button><button data-value="urn:moz-tts:speechd:indonesian?id" class="option" tabindex="-1" role="option">Indonésio (id)</button><button data-value="urn:moz-tts:speechd:english_rp?en-GB" class="option" tabindex="-1" role="option">Inglês (en-GB)</button><button data-value="urn:moz-tts:speechd:english-north?en-GB" class="option" tabindex="-1" role="option">Inglês (en-GB)</button><button data-value="urn:moz-tts:speechd:english?en-GB" class="option" tabindex="-1" role="option">Inglês (en-GB)</button><button data-value="urn:moz-tts:speechd:english_wmids?en-GB" class="option" tabindex="-1" role="option">Inglês (en-GB)</button><button data-value="urn:moz-tts:speechd:en-scottish?en-SC" class="option" tabindex="-1" role="option">Inglês (en-SC)</button><button data-value="urn:moz-tts:speechd:english-us?en-US" class="option" tabindex="-1" role="option">Inglês (en-US)</button><button data-value="urn:moz-tts:speechd:en-westindies?en-WI" class="option" tabindex="-1" role="option">Inglês (en-WI)</button><button data-value="urn:moz-tts:speechd:default?en" class="option" tabindex="-1" role="option">Inglês (en)</button><button data-value="urn:moz-tts:speechd:irish-gaeilge?ga" class="option" tabindex="-1" role="option">Irlandês (ga)</button><button data-value="urn:moz-tts:speechd:icelandic?is" class="option" tabindex="-1" role="option">Islandês (is)</button><button data-value="urn:moz-tts:speechd:italian?it" class="option" tabindex="-1" role="option">Italiano (it)</button><button data-value="urn:moz-tts:speechd:latin?la" class="option" tabindex="-1" role="option">Latim (la)</button><button data-value="urn:moz-tts:speechd:latvian?lv" class="option" tabindex="-1" role="option">Letão (lv)</button><button data-value="urn:moz-tts:speechd:lingua_franca_nova?lfn" class="option" tabindex="-1" role="option">lingua_franca_nova (lfn)</button><button data-value="urn:moz-tts:speechd:lithuanian?lt" class="option" tabindex="-1" role="option">Lituano (lt)</button><button data-value="urn:moz-tts:speechd:lojban?jbo" class="option" tabindex="-1" role="option">lojban (jbo)</button><button data-value="urn:moz-tts:speechd:macedonian?mk" class="option" tabindex="-1" role="option">Macedônio (mk)</button><button data-value="urn:moz-tts:speechd:malayalam?ml" class="option" tabindex="-1" role="option">Malaiala (ml)</button><button data-value="urn:moz-tts:speechd:malay?ms" class="option" tabindex="-1" role="option">Malaio (ms)</button><button data-value="urn:moz-tts:speechd:nepali?ne" class="option" tabindex="-1" role="option">Nepalês (ne)</button><button data-value="urn:moz-tts:speechd:norwegian?no" class="option" tabindex="-1" role="option">Norueguês (no)</button><button data-value="urn:moz-tts:speechd:punjabi?pa" class="option" tabindex="-1" role="option">Panjabi (pa)</button><button data-value="urn:moz-tts:speechd:persian-pinglish?fa-PIN" class="option" tabindex="-1" role="option">Persa (fa-PIN)</button><button data-value="urn:moz-tts:speechd:persian?fa" class="option" tabindex="-1" role="option">Persa (fa)</button><button data-value="urn:moz-tts:speechd:polish?pl" class="option" tabindex="-1" role="option">Polonês (pl)</button><button data-value="urn:moz-tts:speechd:brazil?pt-BR" class="option" tabindex="-1" role="option">Português (pt-BR)</button><button data-value="urn:moz-tts:speechd:portugal?pt-PT" class="option" tabindex="-1" role="option">Português (pt-PT)</button><button data-value="urn:moz-tts:speechd:romanian?ro" class="option" tabindex="-1" role="option">Romeno (ro)</button><button data-value="urn:moz-tts:speechd:russian?ru" class="option" tabindex="-1" role="option">Russo (ru)</button><button data-value="urn:moz-tts:speechd:serbian?sr" class="option" tabindex="-1" role="option">Sérvio (sr)</button><button data-value="urn:moz-tts:speechd:swahili-test?sw" class="option" tabindex="-1" role="option">Suaíli (sw)</button><button data-value="urn:moz-tts:speechd:swedish?sv" class="option" tabindex="-1" role="option">Sueco (sv)</button><button data-value="urn:moz-tts:speechd:tamil?ta" class="option" tabindex="-1" role="option">Tâmil (ta)</button><button data-value="urn:moz-tts:speechd:czech?cs" class="option" tabindex="-1" role="option">Tcheco (cs)</button><button data-value="urn:moz-tts:speechd:turkish?tr" class="option" tabindex="-1" role="option">Turco (tr)</button><button data-value="urn:moz-tts:speechd:vietnam_hue?vi-HUE" class="option" tabindex="-1" role="option">Vietnamita (vi-HUE)</button><button data-value="urn:moz-tts:speechd:vietnam_sgn?vi-SGN" class="option" tabindex="-1" role="option">Vietnamita (vi-SGN)</button><button data-value="urn:moz-tts:speechd:vietnam?vi" class="option" tabindex="-1" role="option">Vietnamita (vi)</button></div></div></div>
+      <div class="dropdown-arrow"></div>
+    </li></ul><button class="button" style="background-image: url('chrome://pocket/content/panels/img/pocket.svg#pocket-mark')" id="pocket-button" title="Salvar no Pocket"></button></ul>
+
+
+
+
+</body></html>

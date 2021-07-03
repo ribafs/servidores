@@ -1,0 +1,48 @@
+Criar um artigo no GH
+
+Testar a criação de diretórios com arquivos com markdown, como no GH
+
+Criando projetos no SourceForge
+
+Com suporte a PHP, MySQL, Git, SCP, SFTP, SSH, Rsync, etc
+
+https://mint-prog.sourceforge.io/docs/
+https://ribafs.sourceforge.io/cms/
+
+Joomla e Laravel não consegui, mas o CMS simples acima sim.
+
+Criar um site no SF para divulgar tudo que aprendi até o momento.
+
+Idealmente o site será com Joomla ou com Grav, para ser mais confortável a alimentação e gerenciamento do conteúdo.
+
+Dados do MariaDB
+
+Hostname 	mysql-r
+Database name prefix 	r3281308_
+RO User 	r3281308ro (SELECT)
+RW User 	r3281308rw (SELECT, INSERT , DELETE, UPDATE)
+ADMIN User 	r3281308admin
+
+Web-access URL https://mysql-r.sourceforge.net
+
+Site
+
+https://ribafs.sourceforge.io/cms
+
+Enviar o Joomla para
+
+SSH
+ssh -t ribafs,joomlar@shell.sourceforge.net create
+
+Criar alias no SF
+/home/users/r/ri/ribafs
+nano .bashrc
+
+cr alias='cd /home/project-web/ribafs/htdocs'
+
+cr vai para /home/project-web/ribafs/htdocs
+
+/home/project-web/ribafs/htdocs
+
+SCP
+scp /home/ribafs/grav.zip ribafs@web.sourceforge.net:/home/project-web/ribafs/htdocs

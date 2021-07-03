@@ -1,0 +1,42 @@
+Mail
+
+iRedMail
+https://docs.iredmail.org/install.iredmail.on.rhel.html
+https://docs.iredmail.org/install.iredmail.on.debian.ubuntu.html
+https://www.digitalocean.com/community/tutorials/how-to-install-iredmail-on-ubuntu-12-04-x64
+
+No terminal
+http://www.devin.com.br/mail-via-linha-de-comando/
+http://www.binarytides.com/linux-mail-command-examples/
+
+https://www.vultr.com/docs/how-to-configure-spamassassin-with-postfix-on-ubuntu-16-04
+https://www.vultr.com/docs/simple-mailserver-with-postfix-dovecot-and-sieve-on-debian-9
+
+Sistema de tickets
+https://www.vultr.com/docs/how-to-install-zammad-2-on-ubuntu-16-04-lts
+
+Monitorar com Zabbix
+https://www.vultr.com/docs/how-to-monitor-remote-servers-using-zabbix-on-ubuntu-16-04
+
+Group chat e colaboration
+https://www.vultr.com/docs/how-to-install-zulip-on-ubuntu-16-04
+
+Zimbra (requer 8GB de RAM)
+https://www.zimbra.com/try/zimbra-collaboration-open-source/
+https://www.vivaolinux.com.br/dica/Configurando-um-servidor-de-email-colaborativo-Zimbra
+
+Citadel
+Prerequisites for Debian and Ubuntu systems:
+
+Easy Install requires a working build environment. This is installed by default on many Linux distributions. Otherwise, to install a build environment use the following commands (as root):
+
+apt-get update
+apt-get install build-essential curl g++ gettext shared-mime-info libssl-dev zlib1g-dev
+
+Then run Easy Install the normal way:
+
+curl http://easyinstall.citadel.org/install | bash
+http://www.citadel.org/doku.php?id=start
+
+Top 20 Best Linux Mail Server Software and Solutions in 2020
+https://www.ubuntupit.com/best-linux-mail-server-software-and-solutions/

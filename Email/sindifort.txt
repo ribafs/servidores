@@ -1,0 +1,169 @@
+Informações sobre o Servidor de e-mail
+
+Usuário do sistema
+
+login - adminemail
+senha - 123456
+
+Domínio usado - sindifort.org.br
+
+IP interno do servidor
+192.168.0.22
+
+Senhas internas do iRedMail
+
+MySQL - 123456m
+Mail - 123456a
+
+Criação de dois usuários/e-mails pela área administrativa
+
+Como o servidor não tem ambiente gráfico, então o acesso deve ser feito em um desktop com navegador
+
+Júnior - cpd@sindifort.org.br - Senha: 123456jr
+Haroldo - haroldo@sindifort.org.br - Senha - 123456hb
+
+Interface de administração dos e-mails: criação de novos e-mails
+https://192.168.0.22/iredadmin
+Login - postmaster@sindifort.org.br
+Senha - 123456a
+
+Webmail - para enviar e receber e-mails
+https://192.168.0.22/mail
+Login - um dos dois e-mails criados
+Senha - 123456a
+
+---------
+Uso do teclado do servidor:
+
+dpkg-reconfigure console-setup
+
+ou
+sudo dpkg-reconfigure keyboard-configuration
+então
+sudo dpkg-reconfigure console-setup
+
+Como ainda não está configurado corretamente, sequem dicas para digitar a barra \ e os dois pontos :
+\ - ;
+: - Ç
+
+Sugestões
+
+Atualmente o servidor fundiona somente localmente, somente na rede 192.168.0
+Para que funcione também exteernamente precisamos usar:
+- Um servidor tipo VPS e configurar ele no servidor VPS
+- UM IP externo/válido
+
+A minha experiência com o iRedMail foi apenas com VPS. Nunca usei com IP fixo.
+
+
+Configurar teclado - na segunda-feira
+sudo dpkg-reconfigure keyboard-configuration
+
+ou
+    dpkg-reconfigure console-data
+Selecione a sua arquitetura (geralmente é qwerty), idioma e mapa de teclado, faça logout e estará funcionando.
+
+ou
+sudo setxkbmap -model abnt2 -layout br
+
+sudo nano /etc/default/keyboard  # Troque pelo editor de sua preferência
+
+2. Procure a seguinte linha:
+
+    XKBLAYOUT 
+
+
+3. Altere para br, se o teclado for ABNT2:
+
+XKBLAYOUT="br"  # Layout do teclado (tipo ABNT2=br ou americano=us)
+
+4. Salve a alteração e reinicie.
+--------------
+Eu segui essa Dica aqui:
+
+http://www.mail-archive.com/ubuntu-br@lists.ubuntu.com/msg11390.html
+
+
+e acrescentei mais uma coisa..
+Na dica diz para você ir no /etc/default/console-setup e modificar o modelo..
+
+no Item:
+CHARMAP estava assim:
+CHARMAP="UTF-8"
+
+Mudei para:
+CHARMAP="ISO-8859-1"
+
+dai meu Teclado voltou funcionar no modo Texto as teclas / e ?
+
+Espero ter ajudado
+--------------
+ Teclados e idiomas no Linux (Debian e Debian Likes)
+Boa noite a todos,
+
+Ainda hoje vejo com certa frequência a reclamação de acentuação e etc em algumas distros, aqui vamos falar das possibilidades de corrigir isso no Debian e nas distros baseadas neste ou seja, ubuntu, Linux Mint, etc., para isso vamos usar o terminal, mas nada de susto por causa disso hein pessoal, já que até no Windows ele está presente, só que lá não com tanto poder.
+
+Começaremos reconfigurando a "locales"
+
+    sudo dpkg-reconfigure locales
+
+Dois passos. No primeiro pode-se desmarcar a maioria das entradas. O que fica são en_US.UTF-8 e pt_BR.UTF-8.
+No segundo se escolhe a locale padrão do root (pt_BR.UTF-8).
+
+    sudo dpkg-reconfigure console-setup
+
+    UTF-8
+    Combinado-Latino; Eslavo Cirirlico; Grego 
+    Não mude a fonte do kernel/inicialização
+
+
+Para tanto, as vezes por motivos desconhecidos há que se reconfigurar o layout do teclado:
+
+      sudo dpkg-reconfigure keyboard-configuration 
+
+Todo cuidado, senão você terá que ir testando muitas configurações, por exemplo a do meu netbook é:
+
+    PC (Intl) Genérico de 105 teclas
+    Portugês do Brasil
+    O padrão para o layout do teclado  
+    Sem tecla compose 
+
+Usar Control+Alt+Backspace para terminar o servidor X?
+
+    A sua escolha. Eu escolho sim. 
+
+Ou então efetuando este comando:   
+
+    sudo setxkbmap -model abnt2 -layout br -variant abnt2
+
+PS: Este comando acima também pode servir na maioria das distros, portanto é sempre bom ter ele guardado ai no seu bloco de notas
+
+E para finalizar configurar o fuso horário:
+
+    sudo dpkg-reconfigure tzdata
+
+    América
+    Belém ("Minha região, estado do Pará")
+
+SEMPRE BOM VERIFICAR O ARQUIVO:
+ Verificar se no arquivo "/etc/default/locale" tem o conteúdo:
+
+    LANG="pt_BR.UTF-8"  
+    LANGUAGE="pt_BR:" 
+
+Podendo ficar assim:  
+LANG="pt_BR.UTF-8"
+LANGUAGE="pt_BR.UTF-8"
+LC_MESSAGES="pt_BR.UTF-8"
+LC_CTYPE="pt_BR.UTF-8"
+LC_COLLATE="pt_BR.UTF-8"
+LC_ALL="pt_BR.UTF-8"
+LC_NUMERIC="pt_BR.UTF-8"
+LC_TIME="pt_BR.UTF-8"
+LC_MONETARY="pt_BR.UTF-8"
+LC_PAPER="pt_BR.UTF-8"
+LC_NAME="pt_BR.UTF-8"
+LC_ADDRESS="pt_BR.UTF-8"
+LC_TELEPHONE="pt_BR.UTF-8"
+LC_MEASUREMENT="pt_BR.UTF-8"
+LC_IDENTIFICATION="pt_BR.UTF-8" 

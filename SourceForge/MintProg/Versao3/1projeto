@@ -1,0 +1,79 @@
+Caso novamente não funcione partirei do mint original.
+
+Instalar o último kernel e ver se dá o mesmo problema. Se sim baixar para o kernel abaixo.
+Como vi uns erros ao final do install.sh então selecionei um kernel abaixo do 5.4.0-52-generic
+
+Com este funcionou - 5.4.0-26generic
+
+Funcionou com o kernel 
+
+Na veresão 3 o Cubic partiu da versão original do mint 20
+
+Nomearei de
+linuxmint-20-cinnamon64-prog3.iso
+
+Enviar para o chroot
+
+- mint_prog_docs para o https://mint-prog.sourceforge.io via scp ou rsync
+
+- usr_local_bin para o chroot /usr/local/bin
+- Enviar os aliases para /etc/skel/.bashrc
+- scripts.md para /etc/skel
+- VSCode
+- Chrome
+dpkg ...
+apt install -f
+- install.sh 
+
+## Também podemos conectar ao servidor do SF usando o nemo
+
+Fica mais confortável, embora mais lento
+
+- Abrir o nemo
+- Arquivo
+- Conectar a um servidor
+- Servidor - web.sourceforge.net
+- Porta - 22
+- Tipo - SSH
+- Nome de usuário - ribafs
+- Senha -
+- Lembrar esta senha
+Conectar
+
+Ctrl+D para criar atalho na barra lateral do nemo 
+
+Apagar antes a pasta docs existente
+/home/project-web/mint-prog/htdocs/docs
+
+rsync -avz /backup/transp/MintProg/Versao3/mint-prog-docs ribafs@web.sourceforge.net:/home/project-web/mint-prog/htdocs/
+
+== Após remasterizar
+
+== Criar antes uma VM e verificar tudo: todos os programas instalados, scripts, aliases, etc.
+
+== Envio da ISO
+
+Criar a apsta Realease3 no SF
+
+rsync -avz /backup/Linux/Distros/linuxmint-20-cinnamon64-prog3.md5 ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release3/
+rsync -avz /backup/Linux/Distros/linuxmint-20-cinnamon64-prog3.iso ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release3/
+
+Saída:
+sending incremental file list
+linuxmint-20-cinnamon64-prog3.iso
+
+sent 2,557,313,504 bytes  received 35 bytes  96,326.10 bytes/sec
+total size is 2,600,468,480  speedup is 1.02
+
+Gastou umas 9 horas para ser enviado na minha internet, que é de uns 15MB.
+
+ou
+scp /backup/Linux/Distros/linuxmint-20-cinnamon64-prog2.iso ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release2/
+
+-z - comprime os arquivos durante o trajeto. Melhor para arquivos texto, php, etc, não compactados. Não é bom para zip, iso, etc.
+-r - recursive
+-v - verbose
+-n - checar argumentos anes de executar
+-P - progess e partial, envio incremental, somente se houver alterações, continuar envios interrompidos
+-a - (archive) sincronizar recursivamente e preservando os links simbólicos, arquivos especiais e de dispositivo, horários de modificação, grupo, proprietário e permissões. É mais comumente usado do que -r e geralmente é o que você deseja usar.
+

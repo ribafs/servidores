@@ -1,0 +1,14 @@
+[1]
+Session Document Url=file:///backup/transp/DO/dns-cloudflare_hostgator.png
+
+[Number]
+NumberOfWindows=1
+
+[WindowProperties1]
+ClassName=kpMainWindow
+ObjectName=MainWindow#1
+State=AAAA/wAAAAD9AAAAAQAAAAMAAAUWAAAAbPwBAAAAAfsAAAASAEMAbwBsAG8AcgAgAEIAbwB4AwAAAEAAAAJUAAAFFgAAAG4AAAUWAAACbQAAAAQAAAAEAAAAAQAAAAL8AAAAAgAAAAAAAAABAAAAEABUAG8AbwBsACAAQgBvAHgDAAAAAP////8AAAAAAAAAAAAAAAIAAAACAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAABYAdABlAHgAdABUAG8AbwBsAEIAYQByAAAAAuX/////AAAAAAAAAAA=
+Window-Maximized 768x1366=true
+
+[WindowProperties1][Toolbar Tool Box]
+ToolButtonStyle=IconOnly

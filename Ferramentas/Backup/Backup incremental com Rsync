@@ -1,0 +1,98 @@
+Backup incremental com Rsync
+
+O objetivo é efetuar backup de uma pasta do desktop para um servidor remoto.
+Ideal para quando temos dois desktops de trabalho, um em casa e outro no trabalho.
+Executar o script em cada um irá levar apenas as alterações do dia. 
+Melhor ainda se adicionado ao crontab.
+
+No computador desktop acessar o terminal em seu diretório home e executar o comando abaixo para gerar a chave do SSH
+
+ssh-keygen -t rsa
+
+Copiar a chave para o servidor remoto, cuja porta do SSH é 55522
+
+ssh-copy-id -p 55522 ribafs@ip_servidor
+
+Após entrar com sua senha do servidor teste:
+
+ssh -p 55522 user@ip_ou_dominio
+
+Assim o script poderá funcionar sem solicitar senha
+
+
+== Agora o script para Backup com rsync incremental
+
+Este script efetuar o backup da pasta local
+backup/0ribamar/Projetos/1Livros/VPS/
+
+Para o servidor em
+/home/ribafs/backup/VPS/
+
+As opções
+
+-a - archive, semelhante a usar todos estes: -rlptgoD: 
+	r - Recursive
+	l - copia Links simbólicos
+	p - preserva Permissões
+	t - preserva modificações do tempo
+	g - preserva grupo
+	o - preserva dono (owner)
+	D - preserva arquivos de disposititos (somente root) e arquivos especiais
+	
+--delete - remove arquivo do destino quando foi removido na origem
+-e - conexão via SSH
+
+
+nano /usr/local/bin/backup_rsync.sh
+
+#!/bin/sh
+
+# Backup de uma pasta local para um servidor remoto
+# https://www.aprendendolinux.com/sincronizando-com-o-rsync/
+
+echo "=== BACKUP INCREMENTAL USANDO RSYNC E CRON ===";
+echo "";
+echo "";
+
+rsync -av --delete -e 'ssh -p 65522' --delete /backup/0ribamar/Projetos/1Livros/VPS/ ribafs@165.227.227.139:/home/ribafs/backup/VPS/
+
+chmod +x /usr/local/bin/backup_rsync.sh
+
+
+== Adicionar ao cron
+
+crontab -e
+
+10 09 * * * root /usr/local/bin/backup_rsync.sh
+
+
+
+
+== Restore do servidor remoto para o desktop local
+
+nano /usr/local/bin/restore_rsync.sh
+
+
+#!/bin/bash
+echo "Obrigatoriamente o diretório para restore precisa terminar com /. Ex:  restore_rsync.sh /backup/VPS/";
+echo "Aperte qualquer tecle para continuar";
+echo "";
+echo "";
+read n;
+if [ ! "$1" ]; then
+    echo "Sintaxe: $0 /diretorio/";
+	echo "";
+	echo "Entre com o nome do script e o diretório com barra ao final"
+    exit 1
+else
+	rsync -av --delete -e 'ssh -p 65522' --delete ribafs@165.227.227.139:/home/ribafs/backup/VPS/Dicas/ $1;
+fi
+
+chmod +x /usr/local/bin/restore_rsync.sh
+
+Antes de executar
+Remover a pasta local ou renomear
+
+Executando. Lembre de deixar uma barra ao final da pasta, para que traga a própria pasta e não somente os arquivos dela
+
+sh restore_rsync.sh /backup/VPS/

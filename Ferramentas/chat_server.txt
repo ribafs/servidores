@@ -1,0 +1,16 @@
+Servidor de Chat
+
+apt-get install git lua5.1 liblua5.1-0-dev lua-filesystem libidn11-dev libssl-dev lua-zlib lua-expat lua-event lua-bitop lua-socket lua-sec luarocks luarocks
+
+adduser --no-create-home --disabled-login --gecos 'Metronome' metronome
+
+cd /opt; git clone https://github.com/maranda/metronome.git metronome
+cd ./metronome; ./configure --ostype=debian --prefix=/usr
+make
+make install
+
+Metronome has now be installed to /opt/metronome.
+
+https://github.com/jappix/jappix/wiki/XmppServer
+https://github.com/maranda/metronome
+

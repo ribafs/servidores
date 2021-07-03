@@ -1,0 +1,19 @@
+Algumas dicas de configuração do Mint
+
+- Teclas de atalho
+- Nemo
+    - Atalhos
+    - Clique único
+- Criar virtualHost no /home/ribafs/www
+- Criar scripts para setar permissões 
+    - do /home/ribafs/www
+    - do /var/www/html
+- Usar o mysql/mariadb sem sudo e sem senha
+- Usar o adminer
+- Abrir o docs em:
+    - ícone no desktop Mint Prog 1.6
+    - http://localhost
+    - https://mint-prog.sourceforge.io/docs/
+
+Isso já deve acompanhar a versão 1.7
+

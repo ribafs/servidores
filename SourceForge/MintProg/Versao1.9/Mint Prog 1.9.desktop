@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Mint Prog 1.9
+Exec=firefox http://localhost
+Comment=Mint com floco em PHP
+Terminal=false
+Icon=linuxmint-logo-leaf-badge-symbolic
+Type=Application
+Name[pt_BR]=Mint Prog 1.9

@@ -1,0 +1,103 @@
+Criar duas box com Vagrant localmente
+E instalar o iRedMail em ambas, sendo uma com Ubuntu 18.04 e outra com Debian 10
+
+Dados:
+
+server1 - 192.168.33.10 - sintsef.org
+server2 - 192.168.33.20 - ribafs.org
+
+Hostname - mx.sintsef.org
+
+Funciona em:
+
+RedHat
+CentOS 	    7 	
+Debian 	    10 (Recommend), 9 	
+Ubuntu 	    18.04 LTS 	
+FreeBSD 	12.x 	
+OpenBSD 	6.6
+
+Requisitos
+- Uma instalação limpa do SO escolhido
+- Pelo menos 2 GB de RAM e 4 GB é fortemente recomendado
+- Instalar todos os pacotes dos repositórios do SO (efetuar o download da respectiva distro/SO)
+- Caso escolha o Ubuntu, use a versão mais recente LTS
+- Um FQN de domínio válido
+
+SO selecionado - Debian 10/Ubuntu 18.04
+
+sudo nano /etc/hosts
+127.0.0.1       mx.sintsef.org localhost       localhost.localdomain
+
+sudo hostname mx.sintsef.org
+
+hostname -f
+
+sudo su
+cd /root
+Download - https://www.iredmail.org/download.html (Atual, versão 1.0)
+tar zxf iRedMail-x.y.z.tar.gz
+
+cd /root/iRedMail-x.y.z/
+bash iRedMail.sh
+
+Wellcome ... - Enter
+Default mail storage path - /var/mail
+Preferred web server - Nginx
+Choose preferred back end ... - MariaDB
+Passwork MySQL admin - zmxn1029m
+First mail doman name - sintsef.org
+Password mail domain administrator - zmxn1029a
+Optional components - Enter
+WARNING - confirmar com y
+
+Aguarde que seja finalizado
+Após finalizar reinicie o computador/VM.
+
+Resultado
+
+Start iRedMail Configurations
+********************************************************************
+[ INFO ] Generate self-signed SSL cert (2048 bits, expire in 10 years).
+[ INFO ] Generate Diffie Hellman Group with openssl, please wait.
+[ INFO ] Create required system accounts.
+[ INFO ] Configure Nginx web server.
+[ INFO ] Configure PHP.
+[ INFO ] Configure MariaDB database server.
+[ INFO ] Setup daily cron job to backup SQL databases with /var/vmail/backup/backup_mysql.sh
+[ INFO ] Configure Postfix (MTA).
+[ INFO ] Configure Dovecot (POP3/IMAP/Managesieve/LMTP/LDA).
+[ INFO ] Configure mlmmj (mailing list manager).
+[ INFO ] Configure ClamAV (anti-virus toolkit).
+[ INFO ] Configure Amavisd-new (interface between MTA and content checkers).
+[ INFO ] Configure SpamAssassin (content-based spam filter).
+[ INFO ] Configure iRedAPD (postfix policy daemon).
+[ INFO ] Configure iRedAdmin (official web-based admin panel).
+[ INFO ] Configure Roundcube webmail.
+[ INFO ] Configure netdata.
+[ INFO ] Configure Fail2ban (authentication failure monitor).
+
+*************************************************************************
+* iRedMail-1.0 installation and configuration complete.
+*************************************************************************
+
+< Question > Would you like to use firewall rules provided by iRedMail?
+< Question > File: /etc/default/iptables, with SSHD ports: 22. [Y|n]
+
+Comunicação
+
+Duas máquinas com box:
+
+192.168.33.10 - iredmail-1.0 - primeira - sintsef.orf 
+192.168.33.20 - iredmail-ub - segunda - ribafs.org
+
+Abri o iredamin na primeira (sintsef.org) e adicionei:
+- domínio: ribafs.org
+- user: teste, teste@ribafs.org
+
+Abri o roundcube no primeiro com teste@ribafs.org
+Enviei um e-mail para o postmaster@sintsef.org
+
+Saí (logout) do Roundcube e loguei com postmaster estava lá o e-mail do teste.
+
+

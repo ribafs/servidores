@@ -1,0 +1,38 @@
+Wesley Paulo Configurar os headers da requisição bem configurados
+
+Adriano Oliveira Eu já teste quase todos e pode ter certeza.. não tem como ser 100%. alguns provedores vão mandar para o SPAM. principalmente se os usuários começarem a ignorar os emails ou detectarem um fluxo alto chegando... Imagine a situação: O hotmail recebe 30000 emails seus em um dia, domínio novo, conteúdo identico... destes 95% não leem os emails. Se você fosse ADM no hotmail iria considerar spam ou não?
+Eu não uso mais email mkt por isso! melhor gastar com remarketing.
+Tem algumas técnicas para amenizar. Não utilizar algumas palavras, pouco HTML e muito texto e por ai vai... mas nada é 100%.
+
+Rogério Pereira servidor smtp proprio, envio de no maximo 300 por hora, tenha certeza que o registros DNS para DKIM, dmarc e _mailkey nunca use servidor compartilhado, e tenha certeza de evitar altas taxas de bounce e reject. não esqueça de colocar links de desinscrição no seu email, quanto maior o tempo de registro de dominio (criação e expiração) melhor
+
+Gabriel Domingos Uma boa copy, conteúdo de valor agregado, fora isso não existe método 100%
+
+Gustavo ao inves de enviar email pelo php envie direto do servidor SMTP, no meu caso eu uso o da Zoho, e também não envie emails que você sabe que as pessoas vão ignorar
+
+Weber Eduardo Augusto é bixo, a gente faz muito disso aqui na empresa... e não existe nada sem risco de spam... isso é certo... a dica dos amigos de cima são super válidas.. o envio para uma lista de emails saudável e link para descadastrar são fundamentais para não ser bloqueado e ao mesmo tempo ir filtrando seu mail list...
+
+Ricardo Milbrath Gonçalves Use plataformas como leadlovers ou mailchimp que os domains deles esta em listas brancas
+
+João Escribano Cara, você precisa fazer o tratamento de bounce do seus emails. E preferencialmente ter um ip dedicado para seu servidor de emails com opção de troca fácil, caso seu bounce fique muito elevado.
+
+Alguns padrões São bem vistos, como opção de não receber mais email, descadastrar, etc....
+
+Uma ferramenta boa de envio open source é o mautic-https://br.mautic.org/
+
+Abraços
+
+Wellington Dantas Bom não existe uma maneira 100% eficaz, mas você pode fazer o disparo sem precisar contratar uma ferramenta e ainda garantir uma boa entrega, você tem que se atentar a vários fatores como por exemplo:
+- enviar e-mails autenticados
+- caso use imagem, anexe da forma correta
+- não use muitas imagens
+- limite o disparo em poucos por minuto, não envie milhares em 1 minuto, pode dar ruim caso seja enviado ao msm servidor, príncipe se for da Microsoft como o Hotmail eu envio no Max 20~40 por minuto
+- não use palavras como (promoção, grátis, cadastre, compre, oferta, etc...)
+- tenha um ou mais ips para disparar emails, caso tenha mais de 1 IP faça o envio sem sobrecarregar apenas 1 IP
+- veja os cabeçalhos importantes para que não fiquem ausentes
+- coloque opção de descadastrar
+- faça o possível para enviar apenas para quem for optin
+
+Bom, acho que dessa forma você elimina grande parte dos problemas que fazem com que o seu disparo vá pra spam, porém se vc usa uma hospedagem compartilhada é bem complicado de fazer isso funcionar com excelência
+
+

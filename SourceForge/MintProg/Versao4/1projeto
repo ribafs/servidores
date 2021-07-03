@@ -1,0 +1,15 @@
+O diferencial desta versão será a inclusão dos softwares
+
+Usar o Mint 3 para o Cubic 
+
+Usar o Kernel mais recente para testar. Se não funcionar usar o anterior.
+
+Nomear com
+mint-20-cin64-prog-1.4.iso
+
+
+Enviar para o chroot
+
+- install1.4.sh
+  O apache já foi instalado na versão anterior
+- docs para /var/www/html, mas somente os arquivos, sem a pasta docs

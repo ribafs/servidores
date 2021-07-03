@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!DOCTYPE Menu
+  PUBLIC '-//freedesktop//DTD Menu 1.0//EN'
+  'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>
+<Menu>
+	<Name>Applications</Name>
+	<MergeFile type="parent">/etc/xdg/menus/cinnamon-applications.menu</MergeFile>
+	<DefaultLayout inline="false"/>
+	<Menu>
+		<Name>alacarte-made-4760a9c4-0c7d-11eb-8e1c-81adfe19d72a</Name>
+		<Directory>alacarte-made-4760a9c4-0c7d-11eb-8e1c-81adfe19d72a.directory</Directory>
+	</Menu>
+	<Layout>
+		<Merge type="menus"/>
+		<Menuname>Accessories</Menuname>
+		<Menuname>Education</Menuname>
+		<Menuname>Games</Menuname>
+		<Menuname>Graphics</Menuname>
+		<Menuname>Internet</Menuname>
+		<Menuname>Office</Menuname>
+		<Menuname>Other</Menuname>
+		<Menuname>Development</Menuname>
+		<Menuname>Multimedia</Menuname>
+		<Menuname>System</Menuname>
+		<Menuname>Universal Access</Menuname>
+		<Menuname>wine-wine</Menuname>
+		<Menuname>Preferences</Menuname>
+		<Menuname>Administration</Menuname>
+		<Merge type="files"/>
+	</Layout>
+</Menu>

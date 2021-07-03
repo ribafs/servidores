@@ -1,0 +1,22 @@
+Tipos de Redes do VirtualBox
+
+Quer o seu Certificado Grátis de Virtualização com VirtualBOX, acesse http://aulaead.com/cursos/ e faça o Curso Grátis !!!
+http://professorramos.com
+
+Nesta Vídeo Aula vou demonstrar como configurar as diversas possibilidades de REDE na Máquina Virtual (VM).
+
+Não conectado: O adaptador está instalado, mas simula que o cabo está desconectado. Veremos que o loopback e o localhost, assim como as configurações TCP/IP estarão disponíveis.
+
+NAT: Esse é o modo padrão do VirtualBox, quando ele toma emprestada a conexão do host com a Internet e a entrega para o guest. Todo o restante da rede fica transparente para a VM, mas acessamos a Internet nela normalmente, inclusive com IP automático, fornecido por um DHCP (Dynamic Host Configuration Protocol) do próprio do VirtualBox.
+
+Placa em modo bridge: Neste modo o adaptador faz uma ponte com a interface "real" do host, conectando-se diretamente à rede deste. Passamos a ter mais um computador na rede do host, inclusive obtendo IP dinamicamente, caso a rede possua essa capacidade. Teremos uma rede entre host, guest e todos os equipamentos da rede como modem, switch, proxy, gateway padrão, etc...
+
+Rede interna: Aqui o VirtualBox monta uma rede totalmente virtual entre todas as máquinas virtuais que estão em funcionamento, independente da rede real ou do host. Ótimo para estudar e testar redes sem interferir na rede "verdadeira". Lembre-se que neste modo o VirtualBox não disponibiliza o DHCP, portanto as configurações TCP/IP devem ser feitas manualmente.
+
+Placa de rede exclusiva do hospedeiro (host-only): Este modo é um pouco mais complexo: ele faz uma rede entre a interface "real" do host e as máquinas virtuais, mas não dá acesso à rede "real" em que o host está conectado, ou seja, o host se comunica com as VMs e vice-versa, mas as VMs não se comunicam com outros computadores da rede "real" do host. É um híbrido entre "Placa em modo bridge" e "Rede interna".
+
+Leandro Ramos - Março de 2014 - http://professorramos.com/
+
+Aviso geral: Todos os outros nomes de produtos referidos ao longo desta Vídeo Aula têm uma finalidade meramente informativa, podendo ser marcas comerciais dos respectivos proprietários. O site www.professorramos.com não detém quaisquer direitos sobre essas marcas.
+
+https://www.youtube.com/watch?v=JI1iOo2igEY

@@ -1,0 +1,1290 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Remasterização do Linux Mint 20 focada em programação com PHP. Já instala com Apache, PHP, MySQL e mais">
+      
+      
+        <link rel="canonical" href="https://mint-prog.sourceforge.io/docs/">
+      
+      
+        <meta name="author" content="Ribamar FS">
+      
+      <link rel="shortcut icon" href="img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Mint Prog</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.3f72e892.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ff6e42">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-orange" data-md-color-accent="">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sobre-o-projeto-mint-prog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://mint-prog.sourceforge.io/docs/" title="Mint Prog" class="md-header-nav__button md-logo" aria-label="Mint Prog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Mint Prog
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Sobre o Projeto Mint Prog
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://mint-prog.sourceforge.io/docs/" title="Mint Prog" class="md-nav__button md-logo" aria-label="Mint Prog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Mint Prog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Sobre o Projeto Mint Prog
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="." class="md-nav__link md-nav__link--active">
+      Sobre o Projeto Mint Prog
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-de-hospedagem-de-projetos-no-sourceforge" class="md-nav__link">
+    Exemplo de hospedagem de projetos no SourceForge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informacoes-sobre-o-sf" class="md-nav__link">
+    Informações sobre o SF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projetos-para-abrigo-de-arquivos-binarios-grandes-frs" class="md-nav__link">
+    Projetos para abrigo de arquivos binários, grandes - FRS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-habilitar-mysqlmariadb-no-projeto" class="md-nav__link">
+    Como Habilitar MySQL/MariaDB no Projeto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao" class="md-nav__link">
+    Documentação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurando-o-mariab" class="md-nav__link">
+    Configurando o MariaB
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurando o MariaB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criar-banco-pela-linha-de-comando" class="md-nav__link">
+    Criar banco pela linha de comando
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importar-o-dump" class="md-nav__link">
+    Importar o dump
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagina-de-usuario" class="md-nav__link">
+    Página de usuário
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site" class="md-nav__link">
+    Site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferencia-de-arquivos" class="md-nav__link">
+    Transferência de arquivos
+  </a>
+  
+    <nav class="md-nav" aria-label="Transferência de arquivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#via-web" class="md-nav__link">
+    Via web
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-sftp" class="md-nav__link">
+    Via sftp
+  </a>
+  
+    <nav class="md-nav" aria-label="Via sftp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copiar-pastas-e-recursivamente-no-sftp" class="md-nav__link">
+    Copiar pastas e recursivamente no sftp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removendo-diretorios-com-sftp" class="md-nav__link">
+    Removendo diretórios com SFTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracoes-para-o-filezilla" class="md-nav__link">
+    Configurações para o FileZilla
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-scp" class="md-nav__link">
+    Via SCP
+  </a>
+  
+    <nav class="md-nav" aria-label="Via SCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enviar-uma-pasta-com-subpastas-para-o-htdocs-em-projeto-web" class="md-nav__link">
+    Enviar uma pasta com subpastas para o htdocs em projeto web
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviar-uma-iso-para-um-projeto-tipo" class="md-nav__link">
+    Enviar uma ISO para um projeto tipo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-rsync" class="md-nav__link">
+    Via rsync
+  </a>
+  
+    <nav class="md-nav" aria-label="Via rsync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enviar" class="md-nav__link">
+    Enviar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receber" class="md-nav__link">
+    Receber
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-git" class="md-nav__link">
+    Via Git
+  </a>
+  
+    <nav class="md-nav" aria-label="Via Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usando-pela-primeira-vez" class="md-nav__link">
+    Usando pela Primeira vez
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nas-proximas-vezes-para-enviar-arquivos" class="md-nav__link">
+    Nas próximas vezes, para enviar arquivos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nas-proximas-vezes-para-receber-arquivos" class="md-nav__link">
+    Nas próximas vezes, para receber arquivos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hosts-do-sf" class="md-nav__link">
+    Hosts do SF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php" class="md-nav__link">
+    PHP
+  </a>
+  
+    <nav class="md-nav" aria-label="PHP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificar-informacoes-do-php-em-seu-projeto" class="md-nav__link">
+    Verificar informações do PHP em seu projeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checar-se-o-pdo-ta-disponivel" class="md-nav__link">
+    Checar se o PDO tá disponível
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dica" class="md-nav__link">
+    Dica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setando-parametros-do-phpini-no-projeto" class="md-nav__link">
+    Setando Parâmetros do php.ini no projeto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloads-do-sf" class="md-nav__link">
+    Downloads do SF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    SSH
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acesso" class="md-nav__link">
+    Acesso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerar-e-enviar-chave-publica-do-ssh-para-o-sf" class="md-nav__link">
+    Gerar e Enviar chave pública do SSH para o SF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerando-a-chave-no-desktop" class="md-nav__link">
+    Gerando a chave no desktop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir" class="md-nav__link">
+    Exibir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar" class="md-nav__link">
+    Copiar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colar-na-caixa-ssh-public-keys-da-pagina-abaixo" class="md-nav__link">
+    Colar na caixa SSH Public Keys da página abaixo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-de-hospedagem-de-projetos-no-sourceforge" class="md-nav__link">
+    Exemplo de hospedagem de projetos no SourceForge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informacoes-sobre-o-sf" class="md-nav__link">
+    Informações sobre o SF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projetos-para-abrigo-de-arquivos-binarios-grandes-frs" class="md-nav__link">
+    Projetos para abrigo de arquivos binários, grandes - FRS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-habilitar-mysqlmariadb-no-projeto" class="md-nav__link">
+    Como Habilitar MySQL/MariaDB no Projeto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao" class="md-nav__link">
+    Documentação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurando-o-mariab" class="md-nav__link">
+    Configurando o MariaB
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurando o MariaB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criar-banco-pela-linha-de-comando" class="md-nav__link">
+    Criar banco pela linha de comando
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importar-o-dump" class="md-nav__link">
+    Importar o dump
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagina-de-usuario" class="md-nav__link">
+    Página de usuário
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site" class="md-nav__link">
+    Site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferencia-de-arquivos" class="md-nav__link">
+    Transferência de arquivos
+  </a>
+  
+    <nav class="md-nav" aria-label="Transferência de arquivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#via-web" class="md-nav__link">
+    Via web
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-sftp" class="md-nav__link">
+    Via sftp
+  </a>
+  
+    <nav class="md-nav" aria-label="Via sftp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copiar-pastas-e-recursivamente-no-sftp" class="md-nav__link">
+    Copiar pastas e recursivamente no sftp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removendo-diretorios-com-sftp" class="md-nav__link">
+    Removendo diretórios com SFTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracoes-para-o-filezilla" class="md-nav__link">
+    Configurações para o FileZilla
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-scp" class="md-nav__link">
+    Via SCP
+  </a>
+  
+    <nav class="md-nav" aria-label="Via SCP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enviar-uma-pasta-com-subpastas-para-o-htdocs-em-projeto-web" class="md-nav__link">
+    Enviar uma pasta com subpastas para o htdocs em projeto web
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviar-uma-iso-para-um-projeto-tipo" class="md-nav__link">
+    Enviar uma ISO para um projeto tipo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-rsync" class="md-nav__link">
+    Via rsync
+  </a>
+  
+    <nav class="md-nav" aria-label="Via rsync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enviar" class="md-nav__link">
+    Enviar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receber" class="md-nav__link">
+    Receber
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-git" class="md-nav__link">
+    Via Git
+  </a>
+  
+    <nav class="md-nav" aria-label="Via Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usando-pela-primeira-vez" class="md-nav__link">
+    Usando pela Primeira vez
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nas-proximas-vezes-para-enviar-arquivos" class="md-nav__link">
+    Nas próximas vezes, para enviar arquivos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nas-proximas-vezes-para-receber-arquivos" class="md-nav__link">
+    Nas próximas vezes, para receber arquivos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hosts-do-sf" class="md-nav__link">
+    Hosts do SF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php" class="md-nav__link">
+    PHP
+  </a>
+  
+    <nav class="md-nav" aria-label="PHP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificar-informacoes-do-php-em-seu-projeto" class="md-nav__link">
+    Verificar informações do PHP em seu projeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checar-se-o-pdo-ta-disponivel" class="md-nav__link">
+    Checar se o PDO tá disponível
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dica" class="md-nav__link">
+    Dica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setando-parametros-do-phpini-no-projeto" class="md-nav__link">
+    Setando Parâmetros do php.ini no projeto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloads-do-sf" class="md-nav__link">
+    Downloads do SF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    SSH
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acesso" class="md-nav__link">
+    Acesso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerar-e-enviar-chave-publica-do-ssh-para-o-sf" class="md-nav__link">
+    Gerar e Enviar chave pública do SSH para o SF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerando-a-chave-no-desktop" class="md-nav__link">
+    Gerando a chave no desktop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exibir" class="md-nav__link">
+    Exibir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar" class="md-nav__link">
+    Copiar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colar-na-caixa-ssh-public-keys-da-pagina-abaixo" class="md-nav__link">
+    Colar na caixa SSH Public Keys da página abaixo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="sobre-o-projeto-mint-prog">Sobre o Projeto Mint Prog</h1>
+<h2 id="exemplo-de-hospedagem-de-projetos-no-sourceforge">Exemplo de hospedagem de projetos no SourceForge</h2>
+<h2 id="informacoes-sobre-o-sf">Informações sobre o SF</h2>
+<ul>
+<li>SO - Linux CentOS 7</li>
+<li>Apache 2.4</li>
+<li>MariaDB 15</li>
+<li>PHP - 7.1.28</li>
+</ul>
+<h2 id="projetos-para-abrigo-de-arquivos-binarios-grandes-frs">Projetos para abrigo de arquivos binários, grandes - FRS</h2>
+<ul>
+<li>Criar pastas para os releases</li>
+<li>Logar</li>
+<li>Acessar projeto</li>
+<li>Add File</li>
+<li>Add Folder</li>
+<li>Criar a pasta Release1 (exemplo)</li>
+</ul>
+<p>Enviar uma ISO para o SF</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>scp /home/ribafs/mint20-cin64-prog3.iso ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release1
+</code></pre></div>
+</td></tr></table>
+<h2 id="como-habilitar-mysqlmariadb-no-projeto">Como Habilitar MySQL/MariaDB no Projeto</h2>
+<ul>
+<li>Faça login no SF</li>
+<li>Acesse o projeto</li>
+<li>Clique em Admim</li>
+<li>Role a tela e clique em MySQL Database</li>
+</ul>
+<p><a href="https://sourceforge.net/p/mint-prog/admin/ext/mysql/">https://sourceforge.net/p/mint-prog/admin/ext/mysql/</a></p>
+<h2 id="documentacao">Documentação</h2>
+<p><a href="https://p.sf.net/sourceforge/mysql">https://p.sf.net/sourceforge/mysql</a></p>
+<h2 id="configurando-o-mariab">Configurando o MariaB</h2>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>Host - mysql-m
+
+Users
+m3280315ro
+m3280315rw
+m3280315admin
+
+Pass
+zm...ro
+zm...rw
+zm...admin
+</code></pre></div>
+</td></tr></table>
+<p>DB - m3280315_mintprog</p>
+<p>Collation - utf8mb4_unicode_ci</p>
+<p>phpmyadmin - https://mysql-m.sourceforge.net</p>
+<p>Podemos acessar o phpmyadmin usando qualquer um dos usuários mas somente o admin cria banco.</p>
+<h3 id="criar-banco-pela-linha-de-comando">Criar banco pela linha de comando</h3>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>mysqladmin -h mysql-o -u l3278826admin -p create l3278826_laravel
+</code></pre></div>
+</td></tr></table>
+<h3 id="importar-o-dump">Importar o dump</h3>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>mysql -h mysql-o -u l3278826admin -p l3278826_laravel &lt; ~/ribafs_laravel_mysqldump.sql
+</code></pre></div>
+</td></tr></table>
+<p>Usar user e senha da página abaixo</p>
+<p><a href="https://sourceforge.net/p/joomlar/admin/ext/mysql/">https://sourceforge.net/p/joomlar/admin/ext/mysql/</a></p>
+<h2 id="pagina-de-usuario">Página de usuário</h2>
+<p><a href="https://ribafs.sourceforge.net/">https://ribafs.sourceforge.net/</a></p>
+<h2 id="site">Site</h2>
+<p>Projeto web</p>
+<p><a href="https://mint-prog.sourceforge.io">https://mint-prog.sourceforge.io</a></p>
+<p>Obs: caso não exista uma index no site acima ele será redirecionado para o site do projeto no SF</p>
+<p><a href="https://sourceforge.net/projects/mint-prog/">https://sourceforge.net/projects/mint-prog/</a></p>
+<h2 id="transferencia-de-arquivos">Transferência de arquivos</h2>
+<h3 id="via-web">Via web</h3>
+<p><a href="https://sourceforge.net/projects/joomlar/upload/">https://sourceforge.net/projects/joomlar/upload/</a></p>
+<h3 id="via-sftp">Via sftp</h3>
+<p>Caso sejam apenas arquivos, sem pastas. Quando for uma pasta com outras dentro, acho melhor usar o SCP.</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>sftp ribafs@web.sourceforge.net
+<span class="nb">cd</span> /home/project-web/mint-prog/htdocs
+</code></pre></div>
+</td></tr></table>
+<p>Enviar os arquivos da pasta local /backup/sf/mint-prog/ para o htdocs no SF</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>put /backup/sf/mint-prog/*
+</code></pre></div>
+</td></tr></table>
+<p>Então poderemos acessar no site abaixo</p>
+<p><a href="https://mint-prog.sourceforge.io">https://mint-prog.sourceforge.io</a></p>
+<p>Dicas</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>get     Copy a file from the remote host to the <span class="nb">local</span> computer. -r para enviar recursivamente
+put     Copy a file from the <span class="nb">local</span> computer to the remote host. -r para receber recursivamente 
+lcd     Change the directory on the <span class="nb">local</span> computer.
+lls     List the contents of the current directory on the <span class="nb">local</span> computer.
+lmkdir  Create a directory on the <span class="nb">local</span> computer. 
+mkdir
+lpwd    Show the present working directory on the <span class="nb">local</span> computer. 
+<span class="nb">pwd</span>     Show the present working directory on the remote host. 
+<span class="nb">cd</span>
+ls
+chmod
+</code></pre></div>
+</td></tr></table>
+<h4 id="copiar-pastas-e-recursivamente-no-sftp">Copiar pastas e recursivamente no sftp</h4>
+<p>Tenho uma pasta no desktop "teste" e dentro dela a pasta "tein".</p>
+<p>/home/ribafs/sf/teste</p>
+<p>Acesso o servidor com sftp</p>
+<p>Preciso criar a pasta teste com o sftp</p>
+<p>mkdir teste</p>
+<p>Então</p>
+<p>put -r /home/ribafs/sf/teste</p>
+<p>Ok</p>
+<h4 id="removendo-diretorios-com-sftp">Removendo diretórios com SFTP</h4>
+<p>Tenho o diretório teste no servidor, com alguns arquivos dentro.</p>
+<p>rm teste/*</p>
+<p>rmdir teste</p>
+<p>Prontinho. Com a ajuda dos amigos do StackOverflow e SuperUser.com</p>
+<h4 id="configuracoes-para-o-filezilla">Configurações para o FileZilla</h4>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>Arquivo
+Gerenciador de sites
+New site - SF
+Protocolo - SFTP
+Host - web.sourceforge.net
+Porta - <span class="m">2</span>
+Usuário - ribafs
+Avançado
+Pasta remota padrão - /home/project-web/mint-prog/htdocs
+Conectar
+</code></pre></div>
+</td></tr></table>
+<h3 id="via-scp">Via SCP</h3>
+<h4 id="enviar-uma-pasta-com-subpastas-para-o-htdocs-em-projeto-web">Enviar uma pasta com subpastas para o htdocs em projeto web</h4>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>scp /home/ribafs/mint-prog/* ribafs@web.sourceforge.net:/home/project-web/mint-prog/htdocs/portal
+</code></pre></div>
+</td></tr></table>
+<h4 id="enviar-uma-iso-para-um-projeto-tipo">Enviar uma ISO para um projeto tipo</h4>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>scp /home/ribafs/mint20-cin64-prog3.iso ribafs@frs.sourceforge.net:/cd /home/frs/project/mint-prog/Release1
+</code></pre></div>
+</td></tr></table>
+<p>Referência:</p>
+<p><a href="https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/">https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/</a></p>
+<h3 id="via-rsync">Via rsync</h3>
+<h4 id="enviar">Enviar</h4>
+<p>ribafs enviar o arquivo local file.zip para a pasta Release1 do seu projeto mint-prog no SF:</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>rsync -e ssh file.zip ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release1/
+</code></pre></div>
+</td></tr></table>
+<h4 id="receber">Receber</h4>
+<p>User ribafs trazer de frs.sourceforge.net:/home/frs/project/mint-prog para /backup/sf/mint-prog </p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>rsync -avP -e ssh ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/ /backup/sf/mint-prog
+</code></pre></div>
+</td></tr></table>
+<p>Referência</p>
+<p>https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories-on-a-vps</p>
+<h3 id="via-git">Via Git</h3>
+<p>O Git é usado principalmente por projetos que trabalham com código fonte, como no GitHub, não para hospedar arquivos binários, nem para projeto web.</p>
+<h4 id="usando-pela-primeira-vez">Usando pela Primeira vez</h4>
+<p>Clonando o projeto do SF</p>
+<p>Acesse a áres do seu projeto. Exemplo como se o mint-ptog fosse um projeto assim.</p>
+<p><a href="https://sourceforge.net/p/mint-prog/code/ref/master/">https://sourceforge.net/p/mint-prog/code/ref/master/</a></p>
+<p>Aparecem as 3 opções para envio. Prefiro o SSH</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>git clone ssh://ribafs@git.code.sf.net/p/joomlar/code joomlar
+</code></pre></div>
+</td></tr></table>
+<p>No desktop</p>
+<p>cd /backup/sf</p>
+<p>Projeto mint-prog</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>git clone ssh://ribafs@git.code.sf.net/p/mint-prog/code mint-prog
+<span class="nb">cd</span> mint-prog
+git config --global user.name <span class="s2">&quot;Ribamar FS&quot;</span>
+git config --global user.email <span class="s2">&quot;ribafs@gmail.com&quot;</span>
+git init
+git add .
+git commit -a -m <span class="s1">&#39;Initial commit&#39;</span>
+git push -u origin master
+</code></pre></div>
+</td></tr></table>
+<h4 id="nas-proximas-vezes-para-enviar-arquivos">Nas próximas vezes, para enviar arquivos</h4>
+<p>No desktop</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> /backup/sf/mint-prog
+git remote add origin ssh://ribafs@git.code.sf.net/p/mint-prog/code
+git push -u origin master
+</code></pre></div>
+</td></tr></table>
+<h4 id="nas-proximas-vezes-para-receber-arquivos">Nas próximas vezes, para receber arquivos</h4>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code><span class="nb">cd</span> /backup/sf/mint-prog
+git remote add origin ssh://ribafs@git.code.sf.net/p/joomlar/code
+git pull
+
+<span class="c1">## Nas próximas vezes, para sincronizar os repositórios local e remoto no SF</span>
+
+<span class="nb">cd</span> /backup/backup_sf/joomlar
+git remote add origin ssh://ribafs@git.code.sf.net/p/mint-prog/code
+git add .
+git commit -m <span class="s2">&quot;Mensagem de commit&quot;</span>
+git pull
+git push -u origin master
+</code></pre></div>
+</td></tr></table>
+<h2 id="hosts-do-sf">Hosts do SF</h2>
+<p>Projeto Web - web.sourceforge.net</p>
+<p>Projetos FRS - frs.sourceforge.net (envio de arquivos grandes, ISO, zip, etc)</p>
+<h2 id="php">PHP</h2>
+<p>Temos duas versões</p>
+<ul>
+<li>5.4.x sob mod_php para projetos com domínios PROJECT.sourceforge.net</li>
+<li>PHP 7.1.x sob mod_php para projetos mais recentes com domínios PROJECT.sourceforge.io</li>
+</ul>
+<h3 id="verificar-informacoes-do-php-em-seu-projeto">Verificar informações do PHP em seu projeto</h3>
+<p>Criar no desktop o arquivo</p>
+<p>i.php</p>
+<table class="php codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="php codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nb">phpinfo</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
+<p>E enviar para o htdocs do seu projeto no SF</p>
+<h3 id="checar-se-o-pdo-ta-disponivel">Checar se o PDO tá disponível</h3>
+<table class="php codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="php codehilite"><pre><span></span><code><span class="x">print_r(PDO::getAvailableDrivers());</span>
+</code></pre></div>
+</td></tr></table>
+<p>ou</p>
+<table class="php codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="php codehilite"><pre><span></span><code><span class="x">if (!defined(&#39;PDO::ATTR_DRIVER_NAME&#39;)) {</span>
+<span class="x">    echo &#39;PDO unavailable&#39;;</span>
+<span class="x">}else{</span>
+<span class="x">    echo &#39;PDO   available&#39;;</span>
+<span class="x">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="dica">Dica</h3>
+<p>Campos tipo string devem se limitar ao tamanho varchar(191).</p>
+<h3 id="setando-parametros-do-phpini-no-projeto">Setando Parâmetros do php.ini no projeto</h3>
+<p>Exemplo</p>
+<table class="php codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="php codehilite"><pre><span></span><code><span class="x">php_value memory_limit 32M</span>
+</code></pre></div>
+</td></tr></table>
+<p>Adicionar ao início do arquivo php</p>
+<table class="php codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="php codehilite"><pre><span></span><code><span class="cp">&lt;?php</span> <span class="nb">ini_set</span><span class="p">(</span><span class="s2">&quot;memory_limit&quot;</span><span class="p">,</span> <span class="s2">&quot;32M&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="downloads-do-sf">Downloads do SF</h2>
+<p>Onde os usuários podem baixar os arquivos do projeto mint-prog</p>
+<p><a href="https://sourceforge.net/projects/mint-prog/">https://sourceforge.net/projects/mint-prog/</a></p>
+<p>Se ele clica em Files</p>
+<p><a href="https://sourceforge.net/projects/mint-prog/files/">https://sourceforge.net/projects/mint-prog/files/</a></p>
+<p>Se clicar em Code</p>
+<p><a href="https://sourceforge.net/p/mint-prog/code/ref/master/">https://sourceforge.net/p/mint-prog/code/ref/master/</a></p>
+<h2 id="ssh">SSH</h2>
+<p>All SourceForge.net project services for developers (including shell service and Git, Hg, and SVN write access) are provided using SSH. 
+Todos os serviços do projeto SourceForge.net para desenvolvedores (incluindo serviço shell e acesso de gravação Git, Hg e SVN) são fornecidos usando SSH.</p>
+<p>Projetos para desenvolvedores tem suporte ao SSH. Mas o shell tem restrições. Por exemplo, não podemos executar o composer. Talvez instalando localmente.</p>
+<p>Mas podemos executar programas muito úteis como wget e unzip, mas não é permitido download de qualquer site. </p>
+<p>O que podemos fazer?</p>
+<ul>
+<li>Enviar um arquivo zipado do nosso desktop para o htdocs do projeto no SF</li>
+<li>
+<p>Acessar o htdocs do projeto com SSH e executar unzip</p>
+</li>
+<li>
+<p>Podemos checar as versões dos softwares</p>
+</li>
+</ul>
+<h3 id="acesso">Acesso</h3>
+<p>Eu não tenho acesso direto com o usuário:</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>ssh -t ribafs@shell.sourceforge.net create
+</code></pre></div>
+</td></tr></table>
+<p>Acesso para alguns projetos não tenho. Talvez por caracterizar um projeto de desenvolvimento, pois importei para ele um repositório do GitHub.</p>
+<p>Mas pelo projeto joomlar</p>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>ssh -t ribafs,joomlar@shell.sourceforge.net create
+</code></pre></div>
+</td></tr></table>
+<p>Eu tenho acesso.</p>
+<p>Depois de conectado podemos navegar por qualquer dos nossos projetos:</p>
+<p>cd /home/project-web/mint-prog/htdocs</p>
+<p>Quero enviar o composer.phar para o SF.
+Como não permite baixar com o wget, baixo para meu desktop e envio pelo SCP.
+Mas não consigo executar, pois o composer precisa de acesso a outros sites e isso é bloqueado.</p>
+<h3 id="gerar-e-enviar-chave-publica-do-ssh-para-o-sf">Gerar e Enviar chave pública do SSH para o SF</h3>
+<p>Muito útil executar estes passos, pois assim poderá acessar os serviços do SF sem senha.</p>
+<p><a href="https://sourceforge.net/auth/shell_services">https://sourceforge.net/auth/shell_services</a></p>
+<h3 id="gerando-a-chave-no-desktop">Gerando a chave no desktop</h3>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>ssh-keygen -t ed25519 -C <span class="s2">&quot;ribafs@shell.sf.net&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="exibir">Exibir</h3>
+<table class="bash codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="bash codehilite"><pre><span></span><code>cat ~/.ssh/id_rsa.pub
+</code></pre></div>
+</td></tr></table>
+<h3 id="copiar">Copiar</h3>
+<h3 id="colar-na-caixa-ssh-public-keys-da-pagina-abaixo">Colar na caixa SSH Public Keys da página abaixo</h3>
+<p><a href="https://sourceforge.net/auth/shell_services">https://sourceforge.net/auth/shell_services</a></p>
+<p>No caso do Mint, usa bash, como muitos</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Inteiramente livre
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

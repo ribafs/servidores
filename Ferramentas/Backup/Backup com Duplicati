@@ -1,0 +1,25 @@
+Backup com Duplicati
+
+https://www.duplicati.com/
+http://www.elinuxbook.com/install-duplicati-backup-app-in-ubuntu-16-04-a-best-free-backup-software-for-linux/
+
+sudo apt-get update
+
+wget https://updates.duplicati.com/beta/duplicati_2.0.2.1-1_all.deb  # Download the Package
+
+sudo dpkg -i duplicati_2.0.2.1-1_all.deb
+
+sudo apt-get install -f
+
+sudo dpkg -l duplicati
+
+duplicati
+
+ou abrir pela web
+
+http://localhost:8200/ngax/index.html#/
+
+Desinstalar
+sudo dpkg -r duplicati
+
+

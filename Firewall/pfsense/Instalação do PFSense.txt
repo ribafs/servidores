@@ -1,0 +1,48 @@
+Instalação do PFSense
+
+VirtualBox
+
+2 placas de rede:
+
+1 - WAN - NAT
+2 - LAN - Interna
+
+Ou Bridge e Bridge ou Bridge e Interna
+
+Após instalar precisa desabilitar o firewall do pfsense:
+
+8 - Shell
+
+Execute
+pfctl -d
+
+exit
+
+Acesse a interface web com o IP da WAN
+
+https://192.168.25.12
+
+admin
+pfsense
+
+Siga o assiastente para configurar seu firewall.
+
+
+-------
+Booting from USB
+
+    If the boot stops with a mountroot error while booting off the installation disc, usually with USB CD/DVD drives, escape to the loader prompt and run the following: 
+
+ set kern.cam.boot_delay="10000"
+ boot
+
+    On 2.0 this is on the boot menu - option #3 to boot from USB devices.
+
+At which point the boot will continue normally and a normal installation will be possible.
+
+If running permanently from a medium that requires this delay, edit /boot/loader.conf.local and insert the following line:
+
+kern.cam.boot_delay="10000"
+
+    If booting fails from a USB 3.0 port and the above does not help, try a USB 2.0 port with the same delay settings.
+

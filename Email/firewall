@@ -1,0 +1,7 @@
+Habilitar o firewall no servidor
+
+sudo ufw enable
+
+sudo ufw status verbose
+
+

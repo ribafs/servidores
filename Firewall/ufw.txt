@@ -1,0 +1,6 @@
+sudo ufw allow from 10.40.9.35 to 127.0.0.1 port 80
+
+sudo ufw allow PORT_NUMBER
+
+sudo ufw allow from 10.40.9.35 to any port 80
+

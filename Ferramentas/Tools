@@ -1,0 +1,18 @@
+clamav clamav-daemon clamtk
+
+gparted 
+partimage
+
+wireshark
+
+lynis rkhunter
+
+nmap traceroute
+
+clonezilla 
+
+deborphan  bleachbit 
+
+kalgebra kig gcompris marble geogebra
+
+python3-smbc

@@ -1,0 +1,58 @@
+Criar em cima do 1.6 com kernel anterior
+
+Nome
+mint-20-cin64-prog-1.7.iso
+
+As extensões do VSCode estão funcionando na ISO 1.6
+
+Add
+ícone Mint Prog 1.7 -> /etc/skel/desktop
+Copiar todo o conteúdo do docs para /var/www/html
+
+Enviar
+- anydesk para o c hroot e instalar coms dpkg -i
+
+Instalar localmente os abaixo, todos os CMS com login e senha "admin" e exportar os sql para a pasta /var/www/html/sql
+- Joomla com idioma pt-br
+- WordPress pt-br
+- Drupal
+- OpenCart
+- Laravel, todos com auth
+    - 5.8
+    - 6
+    - 7
+    - 8
+- CMS afternoon. Não instalado, apenas o instalador
+- CMS October. Não instalado, apenas o instalador
+- Criar seus bancos e os importar no chroot
+- Instalar cada um em meu desktop
+- Caso não funcione, criar um index.html com um aviso detalhando sobre a criação do banco e importação do script da pastga /var/www/html/sql
+
+Enviar o adminer source com plugin loginless e explicar como usar
+No login
+root
+root
+
+Esta senha é apenas para o adminer, mas o mysql está sem senha.
+
+Instalar
+apt install phpmyadmin
+
+apt update;
+apt upgrade -y;
+apt autoremove -y
+
+
+Após testar o live e instalado
+
+Criar no SF a pasta
+
+Release1.7 (criada)
+
+Enviar o README, o MD5 e a ISO para o SF.
+
+Copiar para a pasta Realease1.7 do SF
+
+rsync -avz /backup/Linux/Distros/mint-20-cin64-prog-1.7.md5 ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release1.7/
+rsync -avz /backup/Linux/Distros/mint-20-cin64-prog-1.7.iso ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release1.7/
+

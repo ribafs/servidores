@@ -1,0 +1,59 @@
+Soluções para backup
+
+- Disco inteiro ou partição - Full
+http://clonezilla.org/
+
+- Duplicati - incremental backup of your system’s and server’s and store the data on cloud in encrypted format. 
+http://www.elinuxbook.com/install-duplicati-backup-app-in-ubuntu-16-04-a-best-free-backup-software-for-linux/
+
+Simples de instalar e funcional.
+
+Backup Your Entire Linux System Using Rsync
+https://www.ostechnix.com/backup-entire-linux-system-using-rsync/
+
+- Backup do disco inteiro com rsync
+Inserir pendrive ou HD e montar
+sudo mount /dev/sdb1 /mnt
+
+Como root execute
+sudo rsync -aAXv / --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} /mnt
+
+    rsync – A fast, versatile, local and remote file-copying utility
+    -aAXv – The files are transferred in “archive” mode, which ensures that symbolic links, devices, permissions, ownerships, modification times, ACLs, and extended attributes are preserved.
+    / – Source directory
+    –exclude – Excludes the given directories from backup.
+    /mnt – It is the backup destination folder.
+
+Alerta: Isso excluirá tudo do destino
+
+- Bacula
+
+- https://sourceforge.net/projects/backuppc/
+
+- https://www.urbackup.org/download.html
+
+Ubuntu
+sudo add-apt-repository ppa:uroni/urbackup
+sudo apt update
+sudo apt install urbackup-server
+https://www.urbackup.org/ServerAdminGuide-v2.2.pdf
+
+- https://labs.riseup.net/code/projects/backupninja
+
+- ShadowProtect
+
+- Amanda backup
+
+- Backup e restore
+http://relax-and-recover.org/
+
+- https://www.vembu.com/vembu-networkbackup/ for windows
+
+- http://www.linuxandubuntu.com/home/10-best-linux-backup-solutions
+
+- LuckyBackup
+https://sourceforge.net/projects/luckybackup/files/0.4.9/ubuntu-16.10/luckybackup_0.4.9-1_amd64.deb/download
+
+Duplycacy
+https://www.digitalocean.com/community/tutorials/manage-backups-cloud-duplicacy
+

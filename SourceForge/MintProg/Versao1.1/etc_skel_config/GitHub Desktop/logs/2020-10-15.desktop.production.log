@@ -1,0 +1,7 @@
+2020-10-15T21:14:29.059Z - info: [ui] [AppStore] loading 1 repositories from store
+2020-10-15T21:14:29.061Z - info: [ui] [AppStore] found account: ribafs (Ribamar FS)
+2020-10-15T21:14:30.694Z - info: [ui] proxy url not resolved, protocol not supported
+2020-10-15T21:14:31.246Z - info: [ui] launching: 2.5.4-linux1 (Linux 5.4.0-51-generic)
+2020-10-15T21:14:31.249Z - info: [ui] execPath: '/usr/lib/github-desktop/github-desktop'
+2020-10-15T21:14:31.306Z - info: [ui] [BranchPruner] No branches to prune.
+2020-10-15T21:14:33.434Z - info: [ui] Executing fetch: git -c credential.helper= -c protocol.version=2 fetch --progress --prune origin (took 2.457s)

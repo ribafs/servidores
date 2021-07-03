@@ -1,0 +1,45 @@
+Configurando IP estático no Ubuntu e Derivados
+
+Diego Duarte 8 de junho de 2011 Linux 6 comentários 34 Visualizações esta semana
+
+    Salvar
+
+Para usuários Windows, a tarefa de mudar IP no Linux soa complicada e certamente o analista não decorou os arquivos de configuração ou os comandos. Este artigo tem como função lhe auxiliar a configurar IP estático no Ubuntu e derivados
+Embora o título diga Ubuntu, a dica abaixo vale para muitas distribuições derivadas do Debian, e tem como alvo, os iniciantes do Linux que não querem se apegar a interface gráfica do Gnome, KDE, etc..
+Configurar IP estático no Ubuntu e derivados
+
+1 – criar uma senha para o root
+sudo passwd root
+
+2 – configurar um endereço ip fixo. para isso utilizei o editor nano. para salvar as configurações digite control+X e faça as confirmações necessárias
+sudo nano /etc/network/interfaces
+Troque o texto abaixo….
+auto eth0
+iface eth0 inet dhcp
+…. pelo texto
+auto eth0
+iface eth0 inet static
+address 192.168.1.10
+netmask 255.255.255.0
+network 192.168.1.0
+broadcast 192.168.1.255
+gateway 192.168.1.1
+3 – Especifique os servidores de DNS
+sudo nano /etc/resolv.conf
+search virtua.com.br casa.lan
+nameserver 192.168.1.10
+nameserver 201.6.0.112
+nameserver 201.6.0.108
+4 – Reinicie a rede do servidor
+sudo /etc/init.d/networking restart
+5 – Teste
+host purainfo.com.br
+6 – Para mostrar as configurações realizadas
+ifconfig
+Espero que lhe seja útil este post.
+Gostaria de ler outros artigos de Linux, clique aqui 
+Até a próxima!
+
+Gostou desta dica? Então clique nos anúncios da página e ajude o site a crescer!
+
+Comente conosco seu ponto de vista. Acompanhe também nossas outras dicas do mundo Linux . Deixe seu e-mail ao lado para receber as novidades e se você tiver outras dicas do pinguim ou áreas tecnológicas, compartilhe conosco mandando seu artigo 

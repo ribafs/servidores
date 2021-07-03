@@ -1,0 +1,100 @@
+Configurações da Rede do VirtualBox
+
+Rede tipo Host Only
+
+- Abrir o Virtualbox
+- Arquivo - Preferências
+- Rede
+- Clicar no sinal de + à direita
+- É criada uma interface com nome NatNetwork
+- Clicar no botão de editar abaixo do sinal de +
+- Entre com o IP e máscara da rede
+
+Ao criar a(s) VM(s) use esta interface
+
+Podemos criar uma rede dentro do Virtualbox, sendo cada VM com duas placas, uma NAT (acessa internet) e outra host only (se comunica com as demais VMs)
+
+
+
+Rede em modo ‘NAT’: utilizada para ativar uma placa de rede na Máquina Virtual (MV) com a finalidade de conectá-la à Internet (ou à rede local) através da Máquina Física. Ou seja, a MV terá como Gateway Padrão a própria Máquina Física (o sistema hospedeiro). 
+
+Rede em modo ‘Bridge’: utilizada para ter acesso à rede local, sem a necessidade de ter a Máquina Física como Gateway Padrão. Ou seja, a nossa Máquina Virtual será vista na Rede Local como se fosse mais uma Máquina Física. 
+
+Rede em modo ‘Rede Interna (intnet)’: utilizada para simular uma Rede Local somente entre as Máquinas Virtuais (MVs). Ou seja, com essa opção pode-se realizar a comunicação entre as Máquinas Virtuais, simulando situações de uma ou mais redes locais. 
+
+Rede em modo ‘host-only’: a placa fica para uso exclusivo do hospedeiro, ou seja, a interface servirá apenas para comunicação entre Máquina Virtual (que é o hóspede) e a Máquina Física (que é o hospedeiro). 
+
+
+A Máquina Física possui 3 (três) Máquinas Virtuais simulando um ambiente de Rede Completo. No VirtualBox as configurações das interfaces de rede poderiam ser as seguintes para simulação:
+
+Máquina Virtual Servidor: 2 placas de rede habilitadas, sendo uma como ‘NAT’ (Internet) e outra como ‘Rede Interna’ (comunicação com a rede local simulada); 
+
+Máquina Virtual 1: 1 placa de rede habilitada como ‘Rede Interna’, terá a MV Servidor como Gateway Padrão; 
+
+Máquina Virtual 2: 1 placa de rede habilitada como ‘Rede Interna’, terá a MV Servidor como Gateway Padrão. Pode-se colocá-la em outra rede para simular a comunicação entre redes locais passando pelo Servidor (Firewall). 
+
+Enfim, pode-se fazer diversas combinações híbridas para simular ambientes de rede, desenvolvimento, bancos de dados, etc.
+
+
+== Adicionais para Convidado
+É um pacote especial de software fornecido pelo VirtualBox para ser instalado no sistema convidado.
+
+
+== Tipos de Rede
+
+NAT (Network Address Translation)
+
+É o modo padrão de rede no VirtualBox. Com este modo, o VirtualBox age como um roteador, mapeando o tráfego, mascarando os IPs e possibilitando a comunicação da VM com a rede externa. O sistema convidado recebe um endereço IP que não faz parte da rede externa, do servidor DHCP integrado ao VirtualBox, e portando, durante todo o tráfego, os endereços e portas são traduzidos. Cada máquina virtual terá um roteador particular e elas não farão parte de uma mesma rede, impossibilitando a comunicação entre elas.
+
+Este modo é necessário quando não é possível a máquina virtual obter um endereço IP real da rede externa. Ou quando deseja tornar a VM invisível e inalcançável pela rede externa, pelo menos não diretamente.
+
+
+Placa Em Modo Bridge
+
+Neste modo, o VirtualBox usa um driver de dispositivo para interceptar e injetar dados no adaptador de rede físico, tornando-se um adaptador de rede por software. O sistema convidado, usando este adaptador de rede por software, consegue conectar-se diretamente na rede externa e assim receber um endereço IP válido na rede externa.
+
+O sistema hospedeiro e também todas as máquinas da rede, na qual a máquina hospedeira pertence, enxergarão normalmente a VM pela rede como se a VM fosse uma máquina real.
+
+É um modo geralmente utilizado em sistemas convidados que são servidores de rede. Este modo possui algumas limitações dependendo do sistema operacional hospedeiro.
+
+
+Rede Interna
+
+Este modo é utilizado para criar uma rede por software onde somente as máquinas virtuais selecionadas ficarão visíveis entre elas. Nenhuma máquina da rede externa, nem mesmo o próprio hospedeiro enxergará as VMs da rede interna. Desta forma, todo o tráfego ficará restrito à rede interna e completamente isolado e escondido da rede externa.
+
+É um modo seguro de se fazer rede entre as VMs, pois será impossível capturar pacotes pela rede externa.
+
+
+Placa De Rede Exclusiva De Hospedeiro
+
+Neste modo, o VirtualBox monta uma rede contendo somente o hospedeiro e um conjunto de máquinas virtuais, sem a necessidade do adaptador de rede físico do hospedeiro. É um modo híbrido entre o modo bridge e o modo de rede interna, as VMs se enxergarão entre si e ao hospedeiro, como se estivessem conectadas a uma mesma rede física, porém, como a rede interna está conectada somente à interface virtual do hospedeiro, o acesso a rede externa não é possível.
+
+O VirtualBox cria no sistema hospedeiro uma interface virtual de rede, semelhante a interface de loopback. Esta interface proporciona a conectividade entre as VMs e o sistema hospedeiro.
+
+
+Driver Genérico
+
+Este modo é raramente usado. Permite ao usuário selecionar um driver que pode ser incluído no VirtualBox, numa recompilação, ou fornecido por um pacote de extensão.
+
+Possui submodos os quais permitem que máquinas virtuais, em hospedeiros distintos, fiquem conectadas numa mesma infraestrutura de rede. Em outras palavras, permite a conexão em rede de sistemas convidados que estão em diferentes sistemas hospedeiros.
+
+Generalizando, é uma parte opcional do VirtualBox que só está incluída no código fonte. O pacote fornecido pela Oracle não inclui os drivers necessários.
+
+
+--------------
+Não conectado
+O adaptador está instalado, mas simula que o cabo está desconectado. Veremos que o loopback e o localhost, assim como as configurações TCP/IP estarão disponíveis.
+
+NAT
+Esse é o modo padrão do VirtualBox, quando ele toma emprestada a conexão do host com a Internet e a entrega para o guest. Todo o restante da rede fica transparente para a VM, mas acessamos a Internet nela normalmente, inclusive com IP automático, fornecido por um DHCP - Dynamic Host Configuration Protocol - próprio do VirtualBox.
+
+Placa em modo bridge
+Neste modo o adaptador faz uma ponte com a interface "real" do host, conectando-se diretamente à rede deste. Passamos a ter mais um computador na rede do host, inclusive obtendo IP dinamicamente, caso a rede possua essa capacidade. Teremos uma rede entre host, guest e todos os equipamentos da rede como modem, switch, proxy, gateway padrão, etc...
+
+Rede interna
+Aqui o VirtualBox monta uma rede totalmente virtual entre todas as máquinas virtuais que estão em funcionamento, independente da rede real ou do host. Ótimo para estudar e testar redes sem interferir na rede "verdadeira". Lembre-se que neste modo o VirtualBox não disponibiliza o DHCP, portanto as configurações TCP/IP devem ser feitas manualmente.
+
+Placa de rede exclusiva do hospedeiro (host-only)
+Este modo é um pouco mais complexo: ele faz uma rede entre a interface "real" do host e as máquinas virtuais, mas não dá acesso à rede "real" em que o host está conectado, ou seja, o host se comunica com as VMs e vice-versa, mas as VMs não se comunicam com outros computadores da rede "real" do host. É um híbrido entre "Placa em modo bridge" e "Rede interna".
+
+

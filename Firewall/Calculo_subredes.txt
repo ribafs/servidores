@@ -1,0 +1,20 @@
+Como fazer cálculo de sub-redes no terminal
+Neste artigo, vamos aprender a fazer cálculo de sub-rede no terminal usando o ipcalc. 
+
+Neste artigo, vamos aprender a fazer cálculo de sub-rede no terminal. Hoje eu estava estudando para prova de Redes que eu tenho amanhã, só que eu não tinha como conferir se as respostas estavam corretas, então fui pesquisar algum programa (apt-cache search ) achei ipcalc um programa de linha de comando que mostra, endereço de rede, primeiro host, ultimo host, máscara de rede, endereço de broadcast e faz cálculos de sub-rede  para uma determinada quantidade de host, além de mostrar todas essas informações tanto em decimal como em binário, mas isso só é valido para o Ipv4.  A  instalação é bem simples, digite esse comando:
+
+$ sudo apt-get install ipcalc
+
+Para  verificar  o endereço de rede, primeiro host, ultimo host, máscara de rede, endereço de broadcast de um determinado IP, use esse comando:
+
+$ ipcalc 192.168.0.0/24
+
+Para verificar o endereço IP para uma sub-rede com 40 host outra com 25 host e outra com 12 host
+
+$ ipcalc 192.100.40.0/24 -s 40 25 12
+
+Para fazer 8 sub-redes para um endereço IP de classe C
+$ ipcalc 192.168.0.0/24 27
+http://www.sempreupdate.com.br/2016/11/como-fazer-calculo-de-sub-redes-no.html
+
+

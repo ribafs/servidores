@@ -1,0 +1,80 @@
+Criar em cima do 1.8 com kernel anterior
+
+Nome
+mint-20-cin64-prog-1.9.iso
+
+== Copiar o script de instalação para o chroot /etc/skel
+Somente copiar, não instalar, pois já estão instalados na versão 1.8
+Avisar no README.me que este arquivo está em:
+/home/seuuser/install.sh
+
+Acesso ao chroot
+
+== Configurar o PostgreSQL
+
+su - postgres
+psql
+
+# Digite
+alter role postgres password 'postgres';
+\q
+exit
+
+nano /etc/postgresql/12/main/pg_hba.conf
+
+# Mudar a linha:
+local   all             postgres                                peer
+
+Para
+local   all             postgres                                md5
+
+sudo service postgresql restart
+
+
+== Configurar phpMyAdmin para uso do mysql sem senha
+
+Acessar o terminal
+
+sudo nano /etc/phpmyadmin/config.inc.php
+
+Procure a linha:
+// $cfg['Servers'][$i]['AllowNoPassword'] = TRUE;
+
+Descomente
+$cfg['Servers'][$i]['AllowNoPassword'] = TRUE;
+
+Salve com Ctrl+O e Ctrl+X e saia
+
+Reinicie o apache
+sudo service apache2 restart
+
+== Copiar os arquivos do docs para o /var/www/html do chroot
+
+Executar - permscr
+
+Enviar para o chroot:
+
+apt update;
+apt upgrade -y;
+apt autoremove -y
+
+- Next até o final
+
+Enviar a ISO para o SF via rsync
+
+rsync -avz /backup/transp/0ProjetosAtuais/MintProg/Versao1.9/docs/* ribafsweb.sourceforge.net:/home/project-web/mint-prog/htdocs/docs/
+
+ou SCP
+scp -r /backup/transp/0ProjetosAtuais/MintProg/Versao1.8/docs/* ribafsweb.sourceforge.net:/home/project-web/mint-prog/htdocs/docs/
+
+Agradecimento ao colega Kenio Farias do grupo PHP Brasil no Facebook pelas sugestões. :)
+
+Após testar o live
+
+Enviar o README, o MD5 e a ISO para o SF.
+
+Copiar para a pasta Realease1.9 do SF
+
+rsync -avz /backup/Linux/Distros/mint-20-cin64-prog-1.9.md5 ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release1.9/
+rsync -avz /backup/Linux/Distros/mint-20-cin64-prog-1.9.iso ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release1.9/
+

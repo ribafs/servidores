@@ -1,0 +1,17 @@
+Curso de pfsense
+
+https://www.youtube.com/watch?v=1hE7o9eEMTw
+https://www.youtube.com/watch?v=u2LCnaH_1cE
+https://www.youtube.com/watch?v=05967RouW_I
+https://www.youtube.com/watch?v=RHq_HSBhLUE
+
+Curso de pfsense
+https://www.youtube.com/playlist?list=PLQ7gVTPc8Kmij4-2RpiQMAQjkj3XkolGI
+
+Instalar o pfsense numa VM do virtualbox com apenas uma interface de rede (bridge)
+https://www.youtube.com/watch?v=RuKH0O-e4c4
+
+pfsense com squid e squidguard
+https://www.youtube.com/watch?v=OqFVTTKjQmE
+
+

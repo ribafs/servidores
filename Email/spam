@@ -1,0 +1,73 @@
+Move detected spam to Junk folder
+
+To move detected spam to user's Junk folder, you need to enable global sieve script in Dovecot.
+
+You can find sample sieve rule file /var/vmail/sieve/dovecot.sieve.sample if you chose /var/vmail to store mailboxes during iRedMail installation. If you have a custom mailbox storage directory, the sample sieve rule file should be sieve/dovecot.sieve.sample under that directory. If you cannot find it, you can still download one from iRedMail project: here.
+
+This file must be owned by user vmail and group vmail, permission 0500.
+
+Now open Dovecot config file /etc/dovecot/dovecot.conf (on Linux/OpenBSD) or /usr/local/etc/dovecot/dovecot.conf (FreeBSD), make sure you have setting like below:
+
+# Part of file: /etc/dovecot/dovecot.conf
+
+plugin {
+    ...
+    sieve_before = /var/vmail/sieve/dovecot.sieve
+    ...
+}
+
+Restart Dovecot service to enable it.
+
+Note: we don't use sieve_default = for global sieve script, because it will be ignored if users have their own personal sieve rule files.
+
+-----------
+iRedAdmin-Pro: Priority of spam policy used in iRedMail & iRedAdmin-Pro
+
+With @lookup_sql_dsn = enabled in Amavisd config file, Amavisd will lookup spam policies from SQL database amavisd for different accounts. The priorities of different spam policies are:
+
+    Highest: per-user spam policy set in user profile page
+    Lower: per-domain spam policy set in domain profile page
+    Even lower: global spam policy set in iRedAdmin-Pro: "System -> Anti Spam -> Global Spam Policy"
+    Lowest: server wide spam policy defined in Amavisd config file.
+
+References:
+
+    Explanation of Amavisd SQL database
+---------------
+ How to stop this spam
+
+Please enable iRedAPD plugin 'reject_sender_login_mismatch' in /opt/iredapd/settings.py, restart iredapd service and try again.
+-----------
+mail header shows your server caught the spam:
+itu wrote:
+
+    X-Spam-Flag: YES
+    X-Spam-Score: 10.108
+    X-Spam-Level: **********
+    X-Spam-Status: Yes,
+----------
+Here are a few headers from some messages he received today:
+
+X-Spam-Flag: NO
+X-Spam-Score: -6.611
+X-Spam-Status: No, score=-6.611 tagged_above=-100 required=6.31 tests=[BAYES_00=-1.9, RCVD_IN_BL_SPAMCOP_NET=1.347, RCVD_IN_BRBL_LASTEXT=1.449, RDNS_NONE=0.793, SPF_PASS=-10, URIBL_DBL_SPAM=1.7] autolearn=no
+X-Original-Helo: mx2.naptowncon.com (iRedMail: http://www.iredmail.org/)
+
+----------
+ Improve Spam Filtering?
+
+As you can see, a valid SPF DNS setting decrease the spam score:
+
+    SPF_PASS=-10
+
+You can try to remove SPF related score setting in /etc/mail/spamassassin/local.cf by commenting out below line:
+
+score SPF_PASS -10.000
+
+Restarting Amavisd service is required.
+-------
+Thanks for this suggestion!  This single change has cut down the spam load by around 70%.  That's great! 
+
+Now I'd like to see what else I can do to improve the performance of spamassassin.  What is the best way to set up spamassassin to train it on spam vs ham in an iredmail install?
+
+

@@ -1,0 +1,17 @@
+Criar em cima do 1.4 com kernel anterior
+
+Nome
+mint-20-cin64-prog-1.5.iso
+
+Add
+Extensões do VSCode para o chroot
+~/.vscode
+~/.config/Code
+~/.config/vscode-sqltools
+ícone Mint Prog 1.5 -> /etc/skel/desktop
+docs para 1.5 e com downloads -> /var/www/html, somente o conteúdo, s em a pasta
+
+apt update;
+apt upgrade -y;
+apt autoremove -y;;
+

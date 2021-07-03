@@ -1,0 +1,88 @@
+Na veresão 2 o Cubic partirá da ISO original
+
+Nomearei de
+linuxmint-20-cinnamon64-prog2.iso
+
+## Instalados
+```bash
+- Apache 2.4 com mod_rewrite
+- Git
+- Composer
+- PHPUnit
+- MariaDB
+- PostgreSQL 12
+- PHP 7.4
+- Extensões:
+    - php7.4-bcmath 
+    - php7.4-gd 
+    - php7.4-mysql 
+    - php7.4-pdo-mysql 
+    - php7.4-pdo-pgsql
+    - php7.4-curl
+    - php-pear
+    - php7.4-xml
+    - php7.4-xsl
+    - php-xdebug
+    - php7.4-intl
+    - php7.4-zip
+    - php7.4-mbstring
+    - php7.4-fpm
+    - php-apcu
+    - memcached
+    - php-memcache
+
+- rar
+- unrar
+- zip
+- unzip
+- p7zip-full
+
+- kolourpaint
+- searchmonkey
+- shutter
+- cubic
+- alarm-clock-applet
+```
+
+## Ao final
+
+apt update
+apt upgrade
+
+
+## Instalação com a ISO do Mint Prog
+
+## Criando uma máquina virtual (VM) com o VirtualBox
+
+Criei com 2 GB de RAM e 20 GB de disco (criei com 10 e recebi o aviso de que precisa de 16.1)
+
+Para ficar confortável é bom usar 4GB de RAM.
+
+## Live Sistema
+
+- Esta ISO gerada é um live sistema do Mint 20.
+- Para instalar em uma partição do seu HD, use o Gravador de imagem USB do Mint para gravar a ISO num pendrive
+- Podemos usar como Live ou instalador.
+- Dar o boot com ele
+- Então clicar no ícone com CD no desktop "Install Linux Mint" com botão direito e Open
+- Agora siga os passos normais para uma instalação do Mint
+- Após reiniciar, faça login
+
+## Elaborar o tutorial de instalação e uso do Mint 20
+- Mostrando também a se adicionar teclas de atalho
+- entre outras
+## Elaborar tutorial sobre criação de VM no VBox
+
+TODO
+
+O que falta fazer
+O que falta melhorar
+
+Enviar screenshots para o SF, para o mint-prog
+
+Preparar o README, atualizado apra o SF
+
+- Filmar a criação de uma VM no VBox para a instalação da ISO do Mint Prog
+- Filmar o uso do Mint Prog depois de instalado. Ajustes, configurações e uso.
+
+

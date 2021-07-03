@@ -1,0 +1,59 @@
+Criar um site com WP em
+
+br.wordpress.org
+
+/home/project-web/ribafs/htdocs/wp
+
+https://ribafs.sourceforge.io/wp
+
+https://mysql-r.sourceforge.net
+
+Dados
+
+host - mysql-r
+user - r3281308admin
+banco - r3281308_wordpress
+
+
+cr
+
+scp /home/ribafs/wp.zip ribafs@web.sourceforge.net:/home/project-web/ribafs/htdocs/
+
+Gerenciar via nemo
+
+https://ribafs.sourceforge.io/wp/wp-admin/
+
+Ao aparecer o erro
+O arquivo wp-config.php já existe.
+The wp-config.php file already exists solved
+
+cd wp-admin
+mv setup-config.php setup-config.php2
+
+Para corrigir os problemas com codificação de caracteres
+Adicionei ao wp-config.php
+
+/** Charset do banco de dados a ser usado na criação das tabelas. */
+//define( 'DB_CHARSET', 'utf8mb4_unicode_ci' );
+define( 'DB_CHARSET', 'utf8');
+/** O tipo de Collate do banco de dados. Não altere isso se tiver dúvidas. */
+//define( 'DB_COLLATE', '' );
+
+Dica
+https://wpexpert.com.au/archives/fix-problems-displaying-non-latin-character-sets-in-wordpress/
+https://www.wpbeginner.com/beginners-guide/how-to-add-special-characters-in-wordpress-posts/
+
+Envio do plugin elementor
+
+https://elementor.com/
+https://br.wordpress.org/plugins/elementor/
+https://www.greengeeks.com/tutorials/article/install-elementor-wordpress-page-builder/
+https://www.youtube.com/watch?v=_X0eYtY8T_U&feature=youtu.be&list=PLZyp9H25CboH8b_wsNyOmstckiOE8aUBg
+
+Fiz o download e descompactei
+
+Usando o scp
+scp -r /home/ribafs/elementor ribafs@web.sourceforge.net:/home/project-web/ribafs/htdocs/wp/wp-content/plugins/
+
+Fui ao wp-admin e ativei o plugin.
+

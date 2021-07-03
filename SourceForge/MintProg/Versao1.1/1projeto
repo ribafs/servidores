@@ -1,0 +1,36 @@
+A veresão 2 partirá da ISO atual
+
+linuxmint-20-cin-64bit-prog.iso
+
+Nomearei de
+mint-20-cin64-prog2.iso
+
+Antes de remasterizar:
+
+- Desinstalar o Chrome do chroot
+- remover os atalhos do nemo para /backup adicionar um ou dois do /home/ribafs e ensinar a criar outros
+- salvar os favoritos do FF e do Chrome
+- remover os favoritos
+- Limpar o cache do FF
+- Importar bookmark e favoritos que estão no SF
+- Efetuar logout do Google, Face, Instagran, GitHub, et
+- Copiar a pasta .mozilla para etc_skel
+
+
+- Filmar a criação de uma VM no VBox para a instalação da ISO do Mint Prog
+- Filmar o uso do Mint Prog depois de instalado. Ajustes, configurações e uso.
+
+CHRoot
+
+Parei o mysql no chroot
+Parei também no desktop
+Startei no chroot
+    
+Enviei os 4 sql para o chroot
+
+No chroot os importei assim
+
+mysql -uroot drupal < drupal.sql
+
+Assim com os demais
+

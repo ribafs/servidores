@@ -1,0 +1,92 @@
+# Remasterizando o Linux Mint 20 focada em PHP
+
+Que tal se você instalasse um sistema operacional em seu computador e ele já estivesse quase pronto para você trabalhar? Se ele já viesse com Apache, PHP, MySQL e cia e com as versões mais recentes?
+
+Isso era o que eu queria para mim e acabei conseguindo com a ajuda do ótimo software de remasterização, Cubic. E criei uma remasterização como eu gostaria de encontrar e compartilehi no SourceForge para que qualquer um possa baixar e usar.
+
+Linux é o sistema operacional mais usado em servidores, portanto aprece ser o sistema mais adequado para se usar no desktop também. Assim se evita muitos conflitos entre servidor e desktop. Desde que se use uma distribuição bem amigável praticamente qualquer programador pode usar Linux em seu desktop. Eu faço isso há muitos anos.
+
+A distribuição tida como a mais amigável entre as disbuições Linux é o Linux Mint. É a minha preferida e a que uso. :)
+
+Detalhe: quando aparecer uma nova versão não precisa formatar, atualiza pelo modo gráfico.
+
+##Softwares que já vem pré-instalados:
+
+- Apache 2.4 com mod_rewrite habilitado
+- PHP 7.4 e as principais extensões
+- MariaDB 15 (fork do SGBD mais popular)
+- PostgreSQL 12
+- SQLite 3
+- Git
+- Composer
+- Curl
+- PHPUnit
+- phpMyAdmin
+
+### Para aumentar a produtividade:
+
+- Vários aliases e vários bons scripts
+
+## Outros
+
+- VSCode e boas extensões
+- Google Chrome
+- Cubic
+- FileZilla
+- Kolourpaint (MS paint melhorado) 
+- mc (gerenciador de arquivos para o terminal) 
+- searchmonkey (busca string em arquivo texto de um diretório) 
+- shutter (capturador de telas com ótimos recursos) 
+
+## Utilitários
+
+- rar, unrar, zip, unzip, p7zip
+
+- E mais ...
+
+Você pode adicionar outros programas, também remover os que não deseja, efetuar configurações e criar O seu sistema operacional preferido. Guarde a ISO como backup e para distribuir se desejar.
+
+## Página do projeto
+
+https://sourceforge.net/projects/mint-prog/
+
+## Onde encotnrar a ISO dversão 3 do Mint Prog
+
+[linuxmint-20-cinnamon64-prog3.iso](https://sourceforge.net/projects/mint-prog/files/Release3/linuxmint-20-cinnamon64-prog3.iso/download)
+
+## Documentação
+
+https://mint-prog.sourceforge.io/docs/
+
+## Como criar projetos no SourceForge, tendo este como exemplo.
+
+https://mint-prog.sourceforge.io/docs/howto
+
+## Por que uma remasterização?
+
+Sabemos que a grande maioria dos programadores PHP usa Windows. Também divulga-se que a grande maioria dos servidores que abrigam projetos em PHP usam Linux. 
+Então seria mais adequado eu usar no meu desktop o sistema Linux, para minimizar os problemas com conflitos decorrentes das diferenças entre os sisitemas operacionais do desktop para o do servidor.
+
+A meu ver existem várias vantagens de se usuar o Linux no desktop e uma outra é valorizar o programador, visto que o conhecimento do Windows, por ser a maioria, não é muito valorizado. Já o conhecimento do Linux valoriza o profissional.
+
+Bem, alguns acham que Linux é muito difícil. Pensando nisso criei esta remasterização, aproveitando o excelente software Cubic. Mas em primeiro lugar eu criei esta remasterização para mim. Para guardar uma ISO com o meu sistema com tudo instalado e configurado como gosto. Se você é um dos que acham o línux difícil eu te convido a testar o Linux Mint 20 e melhor ainda, experimente o Mint Prog, que é uma remserização do Linux Mint 20 e Apache, PHP, MySQL e muita coisa para a programação com 
+PHP. Experimente e veja se vale a pena.
+
+Existe um ditado que diz "Em casa de ferreiro o espeto é de pau". O cara rabalha com ferro mas relaxa para sua casa. Eu acredito que o ditado deveria ser assim "Em casa de ferreiro que se preza o espeto é de inox.". Estou recomendando Linux e uso somente linux no trabalho e em casa. Conheço Linux há vários anos e já experimentei a maioria das distribuições, acabei ficando coom o Linux Mint. Para mim é a mais amigável e produtiva.
+
+Mas não significa que os programadores que usam Linux são melhores que os que usam Windows. Não. Claro que se pode ser um excelente programador usando Windows e péssimo usando Linux. Apenas que um mesmo programador pode ter uma produtividade aumentada se usar Linux com conforto. Isso.
+
+Um artigo que aborda este assunto:
+
+https://www.tiagogouvea.com.br/perguntas/windows-ou-linux-qual-o-melhor-para-programar
+
+## Sugestões
+
+    • Após instalar, verifique os programas instalados (enumerados acima) e crie uma nova remasterização mais com a sua cara, adicionando novos programas, removendo outros e efetuando configurações.
+
+    • Crie uma remasterização para uso pessoal, onde poderá copiar todo o seu home para o /etc/skel e ela ficará como quer, com todos os programas e configurações que você usa.
+
+## Visite o site abaixo caso precise de informações sobre como usar o Cubic para remasterizar um Ubuntu e um Mint:
+
+https://github.com/ribafs/tutoriais/tree/master/11Linux/Cubic
+

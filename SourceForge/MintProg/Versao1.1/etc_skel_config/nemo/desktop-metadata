@@ -1,0 +1,118 @@
+[desktop-monitor-0]
+nemo-icon-view-keep-aligned=true
+nemo-icon-view-auto-layout=true
+nemo-icon-view-layout-timestamp=1602838652
+
+[home]
+nemo-icon-position-timestamp=1602966329
+nemo-icon-position=74,122
+monitor=0
+icon-scale=1
+
+[computer]
+nemo-icon-position-timestamp=1602966329
+nemo-icon-position=74,22
+monitor=0
+icon-scale=1
+
+[Volume de 50 GB.volume]
+nemo-icon-position=74,222
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602364662
+
+[Volume de 264 GB.volume]
+nemo-icon-position=74,322
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602363561
+
+[ribafs em 159.89.22.33.volume]
+nemo-icon-position=74,222
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602101423
+
+[ribafs em 165.227.174.222.volume]
+nemo-icon-position=74,222
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602153333
+
+[ribafs em 138.68.83.228.volume]
+nemo-icon-position=74,222
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602174361
+
+[ribafs em 46.101.142.161.volume]
+nemo-icon-position=74,222
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602185245
+
+[ribafs em 159.89.104.97.volume]
+nemo-icon-position=74,222
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602259719
+
+[ribafs em 159.89.10.166.volume]
+nemo-icon-position=74,222
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602959048
+
+[Linux Mint 20 Cinnamon 64-bit.volume]
+nemo-icon-position=74,222
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602591679
+
+[mnt.volume]
+nemo-icon-position=74,322
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602496764
+
+[dev.volume]
+nemo-icon-position=74,222
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602502702
+
+[proc.volume]
+nemo-icon-position=74,322
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602502702
+
+[sys.volume]
+nemo-icon-position=74,522
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602502702
+
+[pts.volume]
+nemo-icon-position=74,422
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602502702
+
+[source-disk.volume]
+nemo-icon-position=74,222
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602624518
+
+[Linux Mint 20 Cinnamon 64-bit cu.volume]
+nemo-icon-position=74,222
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602879140
+
+[ribafs em ribafs.me.volume]
+nemo-icon-position=74,222
+monitor=0
+icon-scale=1
+nemo-icon-position-timestamp=1602965351

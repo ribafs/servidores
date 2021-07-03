@@ -1,0 +1,90 @@
+Criar o projeto ribafs no SF
+
+http://sourceforge.net/p/ribafs
+/home/project-web/ribafs/htdocs
+https://ribafs.sourceforge.io
+https://sourceforge.net/p/ribafs/code
+
+git clone ssh://ribafs@git.code.sf.net/p/ribafs/code ribafs-code
+
+- Importar um repositório do GH para ele: laravel-acl
+
+Instalar nele para testes e demonstração
+
+- wordpress
+- drupal
+- opencart
+- joomla
+- laravel (enviar arquivos depois de pronto)
+
+Criar/adaptar um tempalte bonito com BS com menu para cada um
+
+MariaDB
+
+Hostname 	mysql-r
+DB prefix - r3281308_
+
+Users
+r3281308ro
+r3281308rw
+r3281308admin
+
+phpmyadmin - https://mysql-r.sourceforge.net/
+
+Criar os bancos:
+Todos com collation - utf8mb4_unicode_ci
+r3281308_testes
+r3281308_joomla
+r3281308_drupal
+r3281308_wordpress
+r3281308_opencart
+r3281308_laravel58
+r3281308_laravel7
+r3281308_laravel8
+
+Joomla
+https://ribafs.sourceforge.io/joomla
+Host - mysql-r
+User - r3281308admin
+Senha - 
+Banco - r3281308_joomla
+
+Procedimento
+
+Tendo acesso ao SSH
+
+- Baixar o zip do Joomla em meu desktop e renomear para joomla.zip
+- Enviar para o SF via SCP 
+scp /home/ribafs/joomla.zip ribafs@web.sourceforge.net:/home/project-web/ribafs/htdocs
+- Acessar o SF via SSH
+ssh -t ribafs,joomlar@shell.sourceforge.net create
+cd /home/project-web/ribafs/htdocs/
+unzip -d joomla
+
+Caso não tenha acesso ao SSH (plano B)
+- Baixar o zip do Joomla em meu desktop e descompactar para /home/ribafs/joomla
+- Enviar com o rsync com -z, para compactar e reduzir o tempo de envio
+rsync -az /home/ribafs/joomla ribafs@web.sourceforge.net:/home/project-web/ribafs/htdocs/
+
+Lembre: joomla - envia também a pasta. Se quiser enviar somente o conteúdo da pasta, teria que fazer assim:
+rsync -az /home/ribafs/joomla/ ribafs@web.sourceforge.net:/home/project-web/ribafs/htdocs/joomla
+
+- Instalar via web
+
+Pastas:
+
+joomla
+wp
+drupal
+opencart
+laravel
+    laravel58
+    laravel7
+    laravel8
+
+
+Dados do repositório importado do GH
+
+Label - ACL to Laravel 8
+Mount point - laravel-8
+

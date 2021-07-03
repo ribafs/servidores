@@ -1,0 +1,32 @@
+Criar em cima do 1.5 com kernel anterior
+
+Nome
+mint-20-cin64-prog-1.6.iso
+
+Add
+Testar Extensões do VSCode (ver no chroot) e após criar a vm e dar boot e então instalar
+ícone Mint Prog 1.6 -> /etc/skel/desktop
+Copiar docs para 1.6 e com downloads -> /var/www/html, somente o conteúdo, sem a pasta
+
+apt update;
+apt upgrade -y;
+apt autoremove -y
+
+Após testar o live e instalado
+
+Criar no SF a pasta
+
+Release6
+
+Enviar a ISO e o README.md para lá.
+
+Enviar a ISO e o MD5
+
+== Envio da ISO
+
+Criar para a pasta Realease1.6 no SF
+
+rsync -avz /backup/Linux/Distros/mint-20-cin64-prog-1.6.md5 ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release6/
+rsync -avz /backup/Linux/Distros/mint-20-cin64-prog-1.6.iso ribafs@frs.sourceforge.net:/home/frs/project/mint-prog/Release6/
+
+

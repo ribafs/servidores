@@ -1,0 +1,242 @@
+Bloquear Ultrasurf
+
+Autor: Tiago Alves de Oliveira <tiagofga@gmail.com>
+Data: 30/03/2010
+
+Como bloquear o Ultrasurf
+Como muitos administradores de rede espalhados pelo mundo, fiquei desesperado para conseguir bloquear o programa Ultrasurf.
+
+Tentei de várias formas e a minha última foi fazer o redirecionamento da porta 443 para a do proxy... para a minha surpresa, funcionou.
+
+O comando que usei foi o seguinte:
+
+# iptables -t nat -A PREROUTING -i ppp0 -p tcp --dport 443 -j REDIRECT --to-port 3128
+
+Espero que tenha ajudado alguém. 
+---
+
+Bloquear com squid e squidguard
+https://www.youtube.com/watch?v=sRwBdvzzE4c
+
+---
+
+Como es de conocimiento ultrasurf utiliza el puerto 443 para poder navegar a cualquier sitio denegado por el proxy transparente, la solucion que he implementado es crear el servicio https con numero de puerto 443 y bloquear este servicio con el firewall en Reglas de filtrado para las redes internas. (algo similar cuando cerramos el acceso a https://www.facebook.com)
+
+Decisión:    Denegar
+Origen:    Objeto a bloquear
+Destino:    Cualquiera
+Servicio:    https
+
+Ahora bien, haciendo esto se cierra el acceso a todas aquellas paginas seguras como bancos, hotmail, gmail y las muchas que existen, para resolver esto he creado un objeto "Permitidoshttps" con el rango de direcciones IP de hotmail, gmail, yahoo y otras paginas a las que deseamos dar acceso. (Para este procedimiento utilice http://whois.arin.net/ui) Finalmente he creado otra regla en el firewall permitiendo el acceso a estos sitios:
+
+Decisión:    Aceptar
+Origen:    Objeto o direccion ip
+Destino:    permitidoshttps
+Servicio:    https
+
+De esta forma se esta dando acceso a las paginas seguras en el objeto Permitidoshttps y el ultrasurf esta bloqueado.
+Finalmente tengo que agregar que lo bueno de Zentyal es que puede cerrar el servicio https solo a cietos objetos o direcciones ip y no a toda la subred interna, dejando asi a los otros objetos acceso al servicio https. En lo personal lo utilizo en un centro de educacion y el servicio https lo he bloqueado solo para pcs que utilizan los estudiantes, docentes y administrativos no utilizan ultrasurf. 
+
+---
+De acuerdo con la solución de blady83, tal vez es un poco radical pero a veces no hay otra opción. Es mejor manejar una lista "blanca" con https permitido y no sufrir por el mal uso de los recursos.
+Gracias por explicarlo blady83. 
+
+----
+Bloquear HTTPS
+https://www.youtube.com/watch?v=30nfaZfMMBg
+
+---
+
+Bloquear ultrasurf com pfsense 2
+
+I just trying to use firewall rule to blocking the ultrasurf and it seem like working. If you need to blocking the ultrasurf, you can follow my instruction and test it out to see it work with you pfsense firewall or not. Now I'm using pfblocker because it will be more easy to add more block server in the future.
+
+1. Install pfBlocker.
+
+2. At the pfBlocker General page,
+a) enable pfblocker.
+b) Inbound Interface(s): LAN
+c) Inbound deny action: Block
+d) Outbound Interface(s): LAN
+e) Outbound deny action: Block
+
+3. save this setting.
+
+4. At the Lists, create a new alias by click on the "+" button.
+a) Alias Name: Ultrasurf
+b) List Description: Block Ultrasurf
+c) Lists: empty
+d) List Action: Deny both
+c) Update frequency: Never
+d)Custom list (CIDR):
+65.49.14.0/24
+63.215.202.0/24
+207.171.185.0/24
+207.171.189.0/24
+72.21.194.31/31
+101.128.162.237/31
+175.180.102.77/31
+122.120.64.0/24
+111.255.130.151/31
+1.160.238.30/31
+124.12.53.63/31
+220.136.246.137/31
+70.32.68.127/31
+207.171.163.151/31
+175.180.85.181/31
+129.59.210.101/31
+174.24.248.14/31
+114.25.182.57/31
+114.39.201.136/31
+72.21.194.33/31
+124.11.175.111/31
+61.230.180.191/31
+72.21.214.0/24
+124.11.174.122/31
+207.171.187.117/31
+111.254.118.171/31
+218.169.205.131/31
+112.104.197.114/31
+72.21.194.0/24
+111.242.22.245/31
+220.141.106.42/31
+111.250.193.106/31
+111.249.177.164/31
+114.25.11.175/31
+114.39.205.22/31
+205.251.242.164/31
+72.21.203.148/31
+61.223.97.169/31
+124.12.53.63/31
+65.49.14.0/24
+124.11.175.28/31
+122.121.19.6/31
+65.49.2.13/31
+24.11.192.219/31
+220.136.246.137/31
+63.215.202.6/31
+114.40.37.203/31
+72.69.176.100/31
+114.47.85.88/31
+112.105.119.46/31
+123.204.125.161/31
+184.26.194.70/31
+1.169.120.246/31
+1.160.0.0/16
+1.162.0.0/16
+1.168.0.0/16
+1.169.0.0/16
+1.170.0.0/16
+1.171.0.0/16
+1.172.0.0/16
+1.173.0.0/16
+1.174.0.0/16
+1.175.0.0/16
+114.45.170.0/24
+122.124.162.0/24
+65.49.14.0/24
+61.223.97.0/24
+124.12.53.0/24
+112.104.197.0/24
+124.11.53.0/24
+216.13.11.51/31
+72.21.211.170/31
+122.126.124.13/31
+61.230.180.173/31
+111.255.145.159/31
+101.128.162.237/31
+124.11.170.214/31
+1.160.120.246/31
+124.11.192.176/31
+124.12.54.173/31
+112.105.77.240/31
+220.141.154.81/31
+114.47.113.94/31
+67.19.60.8/31
+64.25.35.201/31
+124.12.32.176/31
+211.74.191.69/31
+64.4.44.80/31
+125.230.125.163/31
+64.25.35.101/31
+175.181.112.39/31
+207.171.163.161/31
+114.46.161.107/31
+
+5. save this settings.
+
+6. Go to Firewall: Rule
+
+7. After the pfBlockerpfUltrasurf rule, add new rule
+a) Proto: TCP/UDP
+b) Source: LAN address
+c) Port: *
+d) Destination:  LAN address
+e) Port: 53 (DNS)
+f) Gateway: *
+
+8. Add another new rule after the rule on step 7.
+a) Proto: TCP/UDP
+b) Source: *
+c) Port: *
+d) Destination:  !LAN address
+e) Port: 53 (DNS)
+f) Gateway: *
+
+9. Apply this new settings.
+
+Ultrasurf 11.04 is blocking by the rules above. Hope this can help you. We should share all the new ultrasurf server in here so our pfsense can block ultrasurf at the gateway firewall level.
+---
+hi this maybe late but here it goes, in order to use the firewall for pfsense first you have to add all these ip in a container and give t a name. You can do this through the use of aliases. So from the the Firewall Menu click aliases and this icon ^ (bulk import aliases from the list), all you have to do is paste all these ip and save.
+after saving go to your firewall and add the following rules for me i use this one:
+
+1. Rules
+2. Add rules Lan
+3. My action is Reject
+4. Protocol is any
+5. Source is any
+6. Destination is : Type (Single hosts or aliases)
+7. Type in your created aliases (from my experience it auto completes after writing a couple of couple of letters)
+8. I check the log so I can monitor if its working or not
+9. Hit save or give it a description.
+
+
+Thats's it
+---
+
+This is NxLogon v1.1.
+
+It can find and kill UltraSurf and Tor processes.
+
+I tested it on Windows 7, Windows 2003 server, Windows XP pro.
+All succedeed in killing UltraSurf and Tor.
+
+One thing to note is that we don't do killing by window title this time.
+At first it seems OK but there's a possibility of having false positives.
+There are some programs changing their window title.
+
+Suppose you read some document about 'UltraSurf' On the Internet.
+Then your browser's window title will be having 'UltraSurf'.
+Of course it still might be different from 'UltraSurf' in case-sensitive way.
+And you even might want to block that document as well.
+But strictly speaking 'killing browsers' is not what you want.
+
+Besides I found another way of killing Tor process.
+So firstly we go that way.
+
+You can just replace your old nxlogon.exe with this one.
+Just need to add '-k' flag in nxlogon.bat.
+
+So it will be like.
+  nxlogon.exe 192.168.0.100 -k
+
+If you don't know how to run it on GPO then read this first.
+  http://nxfilter.org/tutorial.php#single_sign
+
+--
+If you want to run it without NxFilter or single sign-on.
+Then just remove that server-ip part.
+
+  nxlogon.exe -k
+
+
